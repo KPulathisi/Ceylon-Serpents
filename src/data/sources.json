@@ -102,5 +102,13 @@
     "url": "https://www.1990.lk/",
     "accessed": "2026-10-11",
     "use": "Emergency ambulance number"
+  },
+  {
+    "id": "inaturalist",
+    "title": "iNaturalist",
+    "publisher": "iNaturalist (a joint initiative of the California Academy of Sciences and the National Geographic Society)",
+    "url": "https://www.inaturalist.org/",
+    "accessed": "2026-10-11",
+    "use": "Species observation photographs, credited individually to each photographer under their chosen licence"
   }
 ]

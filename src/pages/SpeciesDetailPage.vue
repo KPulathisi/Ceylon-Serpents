@@ -6,6 +6,7 @@ import SpeciesCard from '../components/SpeciesCard.vue'
 import MedicalBadge from '../components/MedicalBadge.vue'
 import LocalName from '../components/LocalName.vue'
 import SafetyNotice from '../components/SafetyNotice.vue'
+import PhotoCredit from '../components/PhotoCredit.vue'
 import { useData, orderedImages } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
 import { useLocalCollection } from '../composables/useLocalCollection.js'
@@ -50,7 +51,7 @@ const credit = computed(() => imgs.value[active.value] || null)
             <img :src="thumb(img.file)" alt="" width="120" height="80" loading="lazy" />
           </button>
         </div>
-        <p v-if="credit" class="credit">{{ t('common.photo') }}: {{ credit.creator }}. {{ credit.licence }}.</p>
+        <PhotoCredit v-if="credit" :image="credit" />
       </div>
 
       <aside class="field-label label">

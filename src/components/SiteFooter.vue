@@ -16,6 +16,8 @@ const { t } = useLanguage()
           <RouterLink to="/safety">{{ t('nav.bite') }}</RouterLink>
           <RouterLink to="/sources">{{ t('nav.sources') }}</RouterLink>
         </p>
+        <p class="small">{{ t('footer.credit') }}</p>
+        <p class="small inat"><a href="https://www.inaturalist.org/" target="_blank" rel="noopener">{{ t('footer.inat') }}</a></p>
         <p class="small">{{ t('footer.made') }}</p>
       </div>
     </div>

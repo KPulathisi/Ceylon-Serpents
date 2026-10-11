@@ -295,7 +295,9 @@
   },
   "footer": {
     "note": "An educational field guide to Sri Lanka's snakes. Not a medical or emergency service.",
-    "made": "Built as a static, privacy-respecting site. No tracking."
+    "made": "Built as a static, privacy-respecting site. No tracking.",
+    "credit": "Many species photographs are shared by the iNaturalist community. Each photo is credited to its photographer under its own licence; see About & sources.",
+    "inat": "Observation photos: iNaturalist"
   },
   "zones": {
     "wet": "Wet zone",
@@ -303,5 +305,12 @@
     "intermediate": "Intermediate zone",
     "coast": "Coast",
     "mixed": "Across zones"
+  },
+  "credit": {
+    "someRights": "some rights reserved ({l})",
+    "noRights": "no rights reserved ({l})",
+    "allRights": "all rights reserved",
+    "unknown": "Unknown photographer",
+    "via": "Via"
   }
 }

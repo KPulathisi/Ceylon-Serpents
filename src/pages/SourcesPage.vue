@@ -37,11 +37,12 @@ const credits = [
     <section class="wrap credits">
       <h2>{{ t('sources.credits') }}</h2>
       <p class="tnote">{{ t('sources.creditNote') }}</p>
+      <p class="inat">{{ t('footer.credit') }} <a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist.org</a></p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>File</th><th>Subject</th><th>Creator</th><th>Source</th><th>Licence</th></tr></thead>
           <tbody>
-            <tr v-for="c in credits" :key="c.id"><td>{{ c.file }}</td><td>{{ c.subject }}</td><td>{{ c.creator }}</td><td>{{ c.source }}</td><td>{{ c.licence }}</td></tr>
+            <tr v-for="c in credits" :key="c.id"><td>{{ c.file }}</td><td>{{ c.subject }}</td><td>{{ c.creator }}</td><td><a v-if="/^https?:/.test(c.source || '')" :href="c.source" target="_blank" rel="noopener">{{ /inaturalist/i.test(c.source) ? 'iNaturalist' : c.source }}</a><template v-else>{{ c.source }}</template></td><td>{{ c.licence }}</td></tr>
           </tbody>
         </table>
       </div>
