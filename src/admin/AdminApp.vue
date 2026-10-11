@@ -30,7 +30,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warn))
 <template>
   <div class="admin">
     <header class="top">
-      <div class="brand"><strong>Ceylon Serpents</strong><span>Admin, local only</span></div>
+      <div class="brand"><img src="/logo-mark-192.png" alt="" class="logo" /><div><strong>Ceylon Serpents</strong><span>Admin, local only</span></div></div>
       <nav>
         <RouterLink v-for="n in nav" :key="n.key" :to="`/admin/${n.key}`" :class="{ on: (section || 'species') === n.key }"><component :is="n.icon" />{{ n.label }}</RouterLink>
       </nav>
@@ -61,7 +61,9 @@ git push</pre>
 <style scoped>
 .admin { min-height: 100vh; background: var(--parchment); }
 .top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 1.5rem; padding: .6rem 1.5rem; background: var(--forest-deep); color: var(--paper); flex-wrap: wrap; }
-.brand { display: grid; line-height: 1.1; }
+.brand { display: flex; align-items: center; gap: .6rem; line-height: 1.1; }
+.brand > div { display: grid; }
+.brand .logo { width: 36px; height: 36px; object-fit: contain; }
 .brand strong { font-family: var(--serif); font-size: 1.15rem; }
 .brand span { font-size: .72rem; opacity: .75; }
 .top nav { display: flex; gap: .2rem; flex-wrap: wrap; flex: 1; }

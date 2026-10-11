@@ -10,8 +10,8 @@ const open = ref(false)
 const route = useRoute()
 watch(() => route.fullPath, () => (open.value = false))
 
-// public/logo.png is used when present; otherwise the drawn mark is shown
-const logoSrc = `${import.meta.env.BASE_URL}logo.png`
+// Transparent cut-out of public/logo.png (logo-mark-192.png); falls back to the drawn mark
+const logoSrc = `${import.meta.env.BASE_URL}logo-mark-192.png`
 const logoOk = ref(true)
 
 const links = [
@@ -62,7 +62,7 @@ const isActive = (l) => (l.exact ? route.path === '/' : route.path.startsWith(l.
 .bar { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: 'brand nav tools'; align-items: center; column-gap: 1.25rem; min-height: 68px; }
 .long .bar { grid-template-columns: auto 1fr; grid-template-areas: 'brand tools' 'nav nav'; }
 .brand { grid-area: brand; display: flex; align-items: center; gap: .55rem; text-decoration: none; color: var(--forest-deep); }
-.logo { height: 44px; width: auto; }
+.logo { height: 48px; width: 48px; object-fit: contain; }
 .mark { width: 38px; color: var(--forest); }
 .wordmark { font-family: 'Abhaya Libre', serif; font-weight: 800; font-size: 1.02rem; line-height: .95; }
 .nav { grid-area: nav; min-width: 0; }
@@ -103,6 +103,6 @@ const isActive = (l) => (l.exact ? route.path === '/' : route.path.startsWith(l.
 @media (max-width: 520px) {
   .bite span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .bite { padding: .5rem; }
-  .logo { height: 36px; }
+  .logo { height: 40px; width: 40px; }
 }
 </style>

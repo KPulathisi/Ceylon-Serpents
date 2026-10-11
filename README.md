@@ -140,7 +140,7 @@ The site uses relative paths and hash routing, so it also works on Cloudflare Pa
 
 ## Logo, photos and videos
 
-- **Logo:** put your logo at `public/logo.png`. The header uses it automatically and falls back to the drawn mark if the file is missing. A transparent PNG about 200px tall works well; it's displayed at 44px. If your logo already contains the words "Ceylon Serpents", delete the `<span class="wordmark">` line in `src/components/SiteHeader.vue`.
+- **Logo:** `public/logo.png` is your original artwork. The site uses cut-outs made from it: `logo-mark-192.png` / `logo-mark-512.png` (transparent background) in the header, footer and admin, and `favicon-32.png`, `favicon-48.png` and `apple-touch-icon.png` for browser tabs and phone home screens. If you change the logo, regenerate these files from the new one at the same sizes.
 - **Photos:** add them through the admin panel. Each species' photo records hold their own credit and licence, which the Sources page lists automatically.
 - **iNaturalist photos:** in the admin, paste the observation link as *Source*, the observer's name as *Photographer* and the photo's licence (for example `CC BY-NC 4.0`). The species page then shows iNaturalist's recommended attribution, "© Name, some rights reserved (CC BY-NC). Via iNaturalist", linked to the observation. The footer and Sources page also credit the iNaturalist community. Only use photos licensed CC0, CC BY, CC BY-SA or CC BY-NC (the site is non-commercial), or ones you have permission for. Other site images (forest, historical plates) are credited in `src/data/imageCredits.json`.
 - **Videos:** add them through the admin panel → Movement videos. They're stored in `public/videos/`.
