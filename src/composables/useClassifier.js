@@ -42,7 +42,12 @@ export function useClassifier() {
           })
         })
         const data = await res.json().catch(() => ({}))
-        if (!res.ok) throw new Error(data.error || 'request_failed')
+        if (!res.ok) {
+          const err = new Error(data.error || `http_${res.status}`)
+          err.detail = data.detail || ''
+          console.warn('[Ceylon Serpents] AI identification failed:', res.status, data.error, data.detail || '')
+          throw err
+        }
         return data
       } finally {
         clearTimeout(timer)

@@ -24,7 +24,7 @@ const hint = ref(null)
 const imgEl = ref(null)
 const fileInput = ref(null)
 
-const ai = reactive({ state: 'idle', result: null, error: '' })
+const ai = reactive({ state: 'idle', result: null, error: '', detail: '' })
 
 function choose() { fileInput.value?.click() }
 
@@ -74,7 +74,8 @@ async function runAi(img) {
     ai.state = 'done'
   } catch (e) {
     ai.state = 'error'
-    ai.error = String(e.message || e)
+    ai.error = e.name === 'AbortError' ? 'timeout' : String(e.message || e)
+    ai.detail = e.detail || (e instanceof TypeError ? 'Network error: the AI service could not be reached.' : '')
   }
 }
 const aiCards = computed(() => (ai.result?.candidates || []).map((c) => ({ ...c, sp: c.id !== 'other' ? getSpecies(c.id) : null })))
@@ -183,7 +184,10 @@ const compareIds = computed(() => results.value.list.slice(0, 3).map((x) => x.s.
         <section v-if="ai.state !== 'idle'" class="ai" aria-live="polite">
           <h2 class="ai-title"><Sparkles aria-hidden="true" />{{ t('identify.aiTitle') }}</h2>
           <p v-if="ai.state === 'loading'" class="loading"><LoaderCircle class="spin" aria-hidden="true" />{{ t('identify.aiLoading') }}</p>
-          <p v-else-if="ai.state === 'error'" class="unclear">{{ ai.error === 'quota_exceeded' || ai.error === 'rate_limited' ? t('identify.aiQuota') : t('identify.aiError') }}</p>
+          <template v-else-if="ai.state === 'error'">
+            <p class="unclear">{{ ai.error === 'quota_exceeded' || ai.error === 'rate_limited' ? t('identify.aiQuota') : t('identify.aiError') }}</p>
+            <p class="by">{{ ai.error }}<template v-if="ai.detail">: {{ ai.detail }}</template></p>
+          </template>
           <template v-else-if="ai.result">
             <p v-if="ai.result.is_snake === 'no'" class="unclear">{{ t('identify.aiNotSnake') }}</p>
             <template v-else>

@@ -90,34 +90,61 @@ export default {
       .map((c) => ({ id: c.id.slice(0, 60), scientificName: c.scientificName.slice(0, 80), name: String(c.name || '').slice(0, 80) }))
     if (!cands.length) return json({ error: 'no_candidates' }, 400, cors)
 
-    const model = env.GEMINI_MODEL || 'gemini-2.5-flash'
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`
-    const payload = {
-      contents: [{ role: 'user', parts: [{ text: buildPrompt(cands, lang) }, { inline_data: { mime_type: mimeType, data: image } }] }],
-      generationConfig: { temperature: 0.2, responseMimeType: 'application/json', responseSchema: schema }
+    // Try the configured model first, then Google's rolling alias and known fallbacks, so a
+    // retired model name doesn't break the site. If a model rejects the JSON schema, retry without it.
+    const models = [...new Set([env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-2.0-flash'].filter(Boolean))]
+    const prompt = buildPrompt(cands, lang)
+    let parsed, model, lastStatus = 0, lastDetail = ''
+
+    const call = async (m, withSchema) => {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}:generateContent`
+      const generationConfig = { temperature: 0.2, responseMimeType: 'application/json' }
+      if (withSchema) generationConfig.responseSchema = schema
+      const payload = { contents: [{ role: 'user', parts: [{ text: prompt }, { inline_data: { mime_type: mimeType, data: image } }] }], generationConfig }
+      return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY }, body: JSON.stringify(payload) })
+    }
+    const errorInfo = async (res) => {
+      const body = await res.text().catch(() => '')
+      let msg = body
+      try { const j = JSON.parse(body); msg = `${j.error?.status || ''} ${j.error?.message || ''}`.trim() || body } catch { /* not JSON */ }
+      return msg.slice(0, 300)
     }
 
-    let res
-    try {
-      res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY }, body: JSON.stringify(payload) })
-    } catch {
-      return json({ error: 'upstream_unreachable' }, 502, cors)
-    }
-    if (!res.ok) {
-      // Visible with `npx wrangler tail`; never includes the key
-      console.log('Gemini error', res.status, (await res.text().catch(() => '')).slice(0, 500))
-      const status = res.status === 429 ? 429 : 502
-      return json({ error: res.status === 429 ? 'quota_exceeded' : 'upstream_error' }, status, cors)
+    outer: for (const m of models) {
+      for (const withSchema of [true, false]) {
+        let res
+        try { res = await call(m, withSchema) } catch (e) {
+          lastStatus = 0; lastDetail = 'Could not reach Google: ' + String(e.message || e).slice(0, 120)
+          break outer
+        }
+        if (res.ok) {
+          try {
+            const data = await res.json()
+            let text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('') || ''
+            text = text.replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '')
+            if (!text) { lastDetail = `Empty answer (finishReason: ${data?.candidates?.[0]?.finishReason || data?.promptFeedback?.blockReason || 'unknown'})`; break outer }
+            parsed = JSON.parse(text)
+            model = m
+            break outer
+          } catch {
+            lastStatus = 200; lastDetail = 'Gemini returned an answer that was not valid JSON'
+            continue
+          }
+        }
+        lastStatus = res.status
+        lastDetail = await errorInfo(res)
+        console.log(`Gemini error (${m}, schema=${withSchema}):`, lastStatus, lastDetail) // visible in `npx wrangler tail`; never contains the key
+        if (res.status === 429) return json({ error: 'quota_exceeded', detail: lastDetail }, 429, cors)
+        if (res.status === 400 && /api key|API_KEY/i.test(lastDetail)) return json({ error: 'bad_key', detail: lastDetail }, 502, cors)
+        if (res.status === 403) return json({ error: 'permission_denied', detail: lastDetail }, 502, cors)
+        if (res.status === 404) continue outer        // model not available: try the next one
+        if (res.status === 400 && withSchema) continue // schema rejected: retry without it
+        if (res.status >= 500) continue outer         // Google-side problem: try another model
+        break outer
+      }
     }
 
-    let parsed
-    try {
-      const data = await res.json()
-      const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('') || '{}'
-      parsed = JSON.parse(text)
-    } catch {
-      return json({ error: 'unreadable_response' }, 502, cors)
-    }
+    if (!parsed) return json({ error: 'upstream_error', status: lastStatus, detail: lastDetail }, 502, cors)
 
     // Sanitise: only known ids or "other", at most 3, plain strings
     const ids = new Set(cands.map((c) => c.id))
