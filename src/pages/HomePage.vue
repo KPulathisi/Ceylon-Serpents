@@ -272,11 +272,13 @@ const titleLines = () => {
 /* Featured: editorial grid, lead specimen larger */
 .featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.75rem); }
 .featured .lead { grid-column: span 2; grid-row: span 2; }
-.featured .lead :deep(.media-link) { flex: 1; display: flex; }
-.featured .lead :deep(.media) { aspect-ratio: auto; flex: 1; min-height: 320px; }
+.featured .lead :deep(.media-link) { flex: 1 1 auto; display: flex; min-height: 0; }
+.featured .lead :deep(.media) { aspect-ratio: auto; flex: 1; min-height: 320px; height: auto; }
+/* the photo absorbs the extra height of the tall lead card, not the text block */
+.featured .lead :deep(.body) { flex: none; }
 .featured .lead :deep(h3) { font-size: var(--step-2); }
 @media (max-width: 900px) { .featured { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .featured { grid-template-columns: 1fr; } .featured .lead { grid-column: auto; grid-row: auto; } }
+@media (max-width: 560px) { .featured { grid-template-columns: 1fr; } .featured .lead { grid-column: auto; grid-row: auto; } .featured .lead :deep(.media) { aspect-ratio: 3 / 2; min-height: 0; } }
 
 .habitats-band { background: var(--sage-soft); }
 .habitats { display: grid; grid-template-columns: minmax(220px, 0.8fr) 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }

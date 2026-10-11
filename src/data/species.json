@@ -60,6 +60,22 @@
         "creator": "Unknown (stock photograph)",
         "source": "Image reference supplied in the project brief",
         "licence": "Not verified"
+      },
+      {
+        "file": "indian-cobra-mv3juhrm0",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "indian-cobra-mv3juhyv1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
       }
     ],
     "en": {
@@ -142,7 +158,32 @@
       "mark": "#4a2f19",
       "pattern": "chain"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "russells-viper-mv3jnvue0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "russells-viper-mv3jnw1y1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "russells-viper-mv3jnwae2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A stout viper of grasslands and paddy fields, and one of the snakes behind a large share of serious snakebites in Sri Lanka.",
       "appearance": "Thick-bodied with a broad, flattened, triangular head clearly wider than the neck. The back is usually light brown with three rows of dark oval blotches, each edged with black and a thin pale outline. The scales are strongly keeled, giving a rough, matt look.",
@@ -224,7 +265,32 @@
       "mark": "#e8e4d8",
       "pattern": "thin-bands"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "common-krait-mv3jm6mt0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "common-krait-mv3jm6w81",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "common-krait-mv3jm7562",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A glossy, night-active elapid of villages and farmland. Its bite can be almost painless, which is why prevention matters so much.",
       "appearance": "Shiny black or bluish black with thin, paired white crossbands that are usually clearer towards the tail. A row of enlarged, hexagonal scales runs along the middle of the back.",
@@ -306,7 +372,32 @@
       "mark": "#d9d6cc",
       "pattern": "wide-bands"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "sri-lankan-krait-mv3joku10",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "sri-lankan-krait-mv3jol3n1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "sri-lankan-krait-mv3jolh42",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A krait found only in Sri Lanka, living in the wet zone's forests, plantations and gardens.",
       "appearance": "Black with white or greyish crossbands. In many individuals the bands are broad and ring-like, especially in juveniles.",
@@ -387,7 +478,32 @@
       "mark": "#5a4026",
       "pattern": "zigzag"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "saw-scaled-viper-mv3jo6pk0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "saw-scaled-viper-mv3jo6xo1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "saw-scaled-viper-mv3jo74w2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A small viper of sandy, dry coastal scrub, known for the rasping warning sound made by its own scales.",
       "appearance": "A small, rough-scaled viper with a pear-shaped head. Usually sandy or brownish with pale, wavy or zigzag markings along the sides and darker blotches on the back.",
@@ -473,6 +589,22 @@
         "primary": true,
         "creator": "Unknown",
         "source": "Image reference supplied in the project brief (BEEZ blog)",
+        "licence": "Not verified"
+      },
+      {
+        "file": "hump-nosed-viper-mv3js90s0",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "hump-nosed-viper-mv3js9c81",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
         "licence": "Not verified"
       }
     ],
@@ -757,7 +889,32 @@
       "mark": "#3e331f",
       "pattern": "rear-bars"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "rat-snake-mv3jnkws0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "rat-snake-mv3jnl421",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "rat-snake-mv3jnlbl2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A long, fast, harmless snake that keeps rodent numbers in check around farms and homes.",
       "appearance": "Large, slender-bodied and quick, with big eyes. Olive to brown, often with dark crossbars towards the rear of the body and tail.",
@@ -837,7 +994,32 @@
       "mark": "#5a3f24",
       "pattern": "blotch"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "indian-python-mv3jnalx0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "indian-python-mv3jnat31",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "indian-python-mv3jnb0y2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "Sri Lanka's largest snake, a non-venomous constrictor of the dry zone's forests and wetlands.",
       "appearance": "Heavy and muscular, pale tan to greyish with large, dark-edged brown blotches along the back and an arrowhead-shaped mark on top of the head.",
@@ -913,7 +1095,32 @@
       "mark": "#2e2c19",
       "pattern": "check"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "checkered-keelback-mv3jleog0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "checkered-keelback-mv3jlevx1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "checkered-keelback-mv3jlf3k2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A common water snake of ponds, canals and paddy fields, patterned like a chessboard.",
       "appearance": "Olive, yellowish or brown with dark spots arranged in a checkerboard pattern. The scales are keeled.",
@@ -993,7 +1200,32 @@
       "pattern": "plain",
       "slender": true
     },
-    "images": [],
+    "images": [
+      {
+        "file": "bronzeback-mv3jltn40",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "bronzeback-mv3jlu031",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "bronzeback-mv3jluau2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A quick, slender tree snake with a bronze-brown back, often seen darting through garden shrubs.",
       "appearance": "Slender with large eyes and a bronze or brown back, paler flanks and belly.",
@@ -1072,7 +1304,32 @@
       "mark": "#e2d9c2",
       "pattern": "thin-bands"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "wolf-snake-mv3jmjo10",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "wolf-snake-mv3jmjxw1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "wolf-snake-mv3jmk6l2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A harmless house snake whose banded pattern resembles a krait's, which shows why pattern alone can't be trusted.",
       "appearance": "Small and flattened-headed, brown with pale crossbands. The front teeth are enlarged, which gives the group its \"wolf\" name.",
@@ -1150,7 +1407,32 @@
       "pattern": "plain",
       "tiny": true
     },
-    "images": [],
+    "images": [
+      {
+        "file": "brahminy-blind-snake-mv3jkta70",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "brahminy-blind-snake-mv3jktjn1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "brahminy-blind-snake-mv3jktro2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A tiny, worm-like burrowing snake that is often mistaken for an earthworm, and an all-female species.",
       "appearance": "Shiny dark brown to black, cylindrical, with a blunt head and tail and tiny, almost hidden eyes.",
@@ -1225,7 +1507,32 @@
       "mark": "#3a4446",
       "pattern": "wide-bands"
     },
-    "images": [],
+    "images": [
+      {
+        "file": "beaked-sea-snake-mv3jj0cc0",
+        "alt": "",
+        "primary": true,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "beaked-sea-snake-mv3jj0kh1",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      },
+      {
+        "file": "beaked-sea-snake-mv3jj0ux2",
+        "alt": "",
+        "primary": false,
+        "creator": "",
+        "source": "",
+        "licence": "Not verified"
+      }
+    ],
     "en": {
       "summary": "A marine elapid of shallow coasts and estuaries, most often met by fishers handling nets.",
       "appearance": "Grey to bluish grey with darker crossbands that fade in adults, a pointed snout and a flattened, paddle-shaped tail.",

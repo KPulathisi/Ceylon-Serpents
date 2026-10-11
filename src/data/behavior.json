@@ -12,7 +12,7 @@
       "ta": "நன்கு அறிந்த S-வடிவ நகர்வு. உடல் முழுவதும் அலைகள் பரவி, ஒவ்வொரு வளைவும் கற்கள், தண்டுகள், சமமற்ற தரையில் பக்கவாட்டில் தள்ளி பாம்பை முன்னோக்கிச் செலுத்துகிறது.",
       "alt": "Diagram: a snake body forming repeated S-curves, with arrows showing each curve pushing sideways and the snake moving forward.",
       "example": "checkered-keelback",
-      "video": "",
+      "video": "videos/lateral-undulation.mp4",
       "videoAi": true
     },
     {
@@ -27,7 +27,7 @@
       "ta": "மெதுவான, நேரான 'கம்பளிப்பூச்சி' நகர்வு. உடல் நேராக இருக்க, வயிற்றுச் செதில்கள் பகுதி பகுதியாக உயர்த்தி முன்னோக்கி இழுக்கப்படுகின்றன.",
       "alt": "Diagram: a straight snake body with bands of belly scales bunching and stretching in a wave from head to tail.",
       "example": "indian-python",
-      "video": "",
+      "video": "videos/rectilinear.mp4",
       "videoAi": true
     },
     {
@@ -42,7 +42,7 @@
       "ta": "சுரங்கங்கள் போன்ற குறுகிய இடங்களில் அல்லது ஏறும்போது பயன்படுகிறது. பின்பகுதியை நிலைநிறுத்தி முன்பகுதியை நீட்டி, பின் முன்பகுதியை நிலைநிறுத்தி பின்பகுதியை இழுக்கிறது.",
       "alt": "Diagram: a snake in a tunnel bunching its body into tight folds, then stretching its head forward.",
       "example": "rat-snake",
-      "video": "",
+      "video": "videos/concertina.mp4",
       "videoAi": true
     },
     {
@@ -57,7 +57,7 @@
       "ta": "தளர்ந்த மணலில், சில சிறிய விரியன்கள் உடலின் பகுதிகளைத் தரையிலிருந்து உயர்த்தி மூலைவிட்டமாக நகர்கின்றன.",
       "alt": "Diagram: a snake moving diagonally across sand, leaving a series of separate parallel J-shaped tracks.",
       "example": "saw-scaled-viper",
-      "video": "",
+      "video": "videos/sidewinding.mp4",
       "videoAi": true
     }
   ],
