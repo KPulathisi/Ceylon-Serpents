@@ -1,0 +1,54 @@
+[
+  {
+    "id": "island-of-endemics",
+    "category": "superlatives",
+    "image": "rainforest-light",
+    "title": { "en": "An island of endemic snakes", "si": "ආවේණික සර්පයින්ගේ දූපතක්", "ta": "தனித்துவமான பாம்புகளின் தீவு" },
+    "lede": "Sri Lanka is home to more than a hundred snake species, and a large share of them live nowhere else.",
+    "body": [
+      "Long periods of isolation from the Indian mainland, combined with the island's mountains and wet south-west, gave snakes the chance to diversify into forms found only here. Research on the evolutionary history of Sri Lankan snakes shows that several lineages have been evolving on the island for millions of years.",
+      "The shieldtails (family Uropeltidae) are the clearest example. These small burrowing snakes have a blunt, shield-like tail tip used to plug their burrows, and Sri Lanka holds an exceptional number of species, many known from only a handful of places.",
+      "Endemic snakes also include the green pit viper, the Sri Lankan krait and two of the island's three hump-nosed vipers. New species are still being described, so any list, including the one on this site, is a snapshot rather than a complete record."
+    ],
+    "refs": ["pyron2013", "reptile-db"]
+  },
+  {
+    "id": "photos-mislead",
+    "category": "identification",
+    "image": "green-pit-viper-branch",
+    "title": { "en": "Why a photograph can't tell you if a snake is safe", "si": "සර්පයෙකු ආරක්ෂිතදැයි ඡායාරූපයකින් කිව නොහැක්කේ ඇයි", "ta": "ஒரு புகைப்படம் பாம்பின் பாதுகாப்பைச் சொல்ல முடியாதது ஏன்" },
+    "lede": "Colour, pattern and even head shape vary more than most people expect.",
+    "body": [
+      "Snakes of one species can differ by age, sex, region, and the stage of their shedding cycle. Lighting, shadow, motion blur and camera angle change what a photograph shows. Harmless wolf snakes look like kraits; keelbacks and rat snakes can imitate a cobra's posture.",
+      "Expert identification services in Sri Lanka have documented how difficult reliable identification from photographs can be, even for specialists. The three hump-nosed viper species, for example, are routinely confused.",
+      "That's why the identification guide on this site offers possible matches to compare and learn from, never a verdict. After a bite, identification is not needed before treatment: hospitals treat based on symptoms and tests."
+    ],
+    "refs": ["sis-paper", "sis-common", "maduwage-hnv"]
+  },
+  {
+    "id": "living-alongside",
+    "category": "coexistence",
+    "image": "vine-snake-sinharaja",
+    "title": { "en": "Living alongside snakes", "si": "සර්පයින් සමඟ සහජීවනය", "ta": "பாம்புகளுடன் இணைந்து வாழ்தல்" },
+    "lede": "Most snakebites are preventable with a few everyday habits.",
+    "body": [
+      "Use a torch when walking at night and wear footwear outdoors. Look before reaching into vegetation, wood piles or dark corners. Sleep on a raised bed under a tucked-in mosquito net, which protects against night-active kraits.",
+      "Keep grass short around homes, store firewood away from the house, and reduce rodent food sources, since rodents attract snakes. Close gaps under doors.",
+      "If you meet a snake, stay still, then move slowly away and give it space to leave. Never try to catch, corner or kill it: many bites happen during such attempts. For a snake inside a building, keep people and pets away and contact your local wildlife office or an experienced rescuer."
+    ],
+    "refs": ["slma-firstaid", "who-facts"]
+  },
+  {
+    "id": "shedding",
+    "category": "behaviour",
+    "image": "vine-snake-head",
+    "title": { "en": "The clear scale over every eye", "si": "සෑම ඇසක්ම ආවරණය කරන විනිවිද කොරපොත්ත", "ta": "ஒவ்வொரு கண்ணையும் மூடும் தெளிவான செதில்" },
+    "lede": "Snakes have no eyelids. Instead, each eye is covered by a transparent scale that is shed with the rest of the skin.",
+    "body": [
+      "Before shedding, fluid builds up between the old and new skin and the eyes turn milky blue. During this time snakes see poorly, often hide, and can be more defensive.",
+      "The old skin usually peels off in one piece, inside out, starting at the lips. Finding a shed skin is a sign a snake uses an area, not that it is still there.",
+      "The lack of eyelids also explains the 'unblinking stare' behind some myths about snakes hypnotising prey."
+    ],
+    "refs": ["reptile-db"]
+  }
+]

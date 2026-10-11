@@ -1,0 +1,72 @@
+[
+  {
+    "id": "eye-plucker",
+    "kind": "folklore",
+    "species": ["green-vine-snake"],
+    "claim": { "en": "The vine snake strikes at people's eyes.", "si": "ඇහැටුල්ලා මිනිසුන්ගේ ඇස්වලට කොටයි.", "ta": "பச்சைப் பாம்பு மனிதர்களின் கண்களைக் கொத்தும்." },
+    "context": "A long-standing belief in Sri Lanka, preserved in the snake's Sinhala name ඇහැටුල්ලා, which zoologists adopted as the scientific genus name Ahaetulla.",
+    "evidence": "Vine snakes feed on lizards and frogs and show no preference for eyes. Bites to people are rare and generally of low medical importance.",
+    "explanation": "The snake rests motionless at head height in shrubs and has a sharply pointed head, so an unexpected encounter can feel like a strike at the face.",
+    "refs": ["reptile-db", "mallik2020"]
+  },
+  {
+    "id": "rat-snake-cobra",
+    "kind": "unsupported",
+    "species": ["rat-snake", "indian-cobra"],
+    "claim": { "en": "Rat snakes are male cobras, or the two mate together.", "si": "ගැරඬියා යනු පිරිමි නාගයා ය, නැතහොත් ඔවුන් එකට එක්වෙයි.", "ta": "சாரைப் பாம்பு ஆண் நல்ல பாம்பு, அல்லது இரண்டும் இணைசேரும்." },
+    "context": "A widespread rural belief in Sri Lanka and South India, possibly reinforced by seeing the two species near each other or rat snakes combat-dancing.",
+    "evidence": "Rat snakes (Colubridae) and cobras (Elapidae) belong to different families, have different anatomy and cannot interbreed. Males of many species, rat snakes included, wrestle in upright 'combat dances' that can look like courtship.",
+    "explanation": "What people often see as two snakes 'mating' upright is usually two male rat snakes competing.",
+    "refs": ["reptile-db"]
+  },
+  {
+    "id": "charmer-music",
+    "kind": "unsupported",
+    "species": ["indian-cobra"],
+    "claim": { "en": "Cobras dance to the snake charmer's music.", "si": "නාගයා අහිකුණ්ඨිකයාගේ නළා හඬට නටයි.", "ta": "நல்ல பாம்பு பாம்பாட்டியின் மகுடி இசைக்கு ஆடும்." },
+    "context": "Snake charming has a long history across South Asia, including Sri Lanka, where it was associated with travelling performers.",
+    "evidence": "Snakes have no external ears and hear airborne sound poorly, though they sense ground vibration. The cobra follows the movement of the pipe and the performer, treating it as a possible threat.",
+    "explanation": "The 'dance' is a defensive posture tracking a moving object. Keeping snakes for performance also causes them significant harm.",
+    "refs": ["reptile-db"]
+  },
+  {
+    "id": "cobra-revenge",
+    "kind": "unsupported",
+    "species": ["indian-cobra"],
+    "claim": { "en": "A cobra remembers faces and returns for revenge if its mate is killed.", "si": "නාගයා මුහුණු මතක තබාගෙන, සහකරු මැරුවොත් පළිගැනීමට එයි.", "ta": "நல்ல பாம்பு முகங்களை நினைவில் வைத்து, துணை கொல்லப்பட்டால் பழிவாங்க வரும்." },
+    "context": "A familiar story in Sri Lankan and Indian popular culture, films and conversation.",
+    "evidence": "There is no scientific evidence that snakes recognise individual human faces or seek revenge. A second snake may appear because both were drawn to the same food, shelter or scent trail.",
+    "explanation": "Repeated sightings usually mean a place offers good shelter or prey, which is a reason to tidy it, not a sign of a grudge.",
+    "refs": ["reptile-db"]
+  },
+  {
+    "id": "milk",
+    "kind": "unsupported",
+    "species": ["indian-cobra"],
+    "claim": { "en": "Snakes drink milk offered to them.", "si": "සර්පයින් පිරිනමන කිරි බොති.", "ta": "பாம்புகள் படைக்கப்படும் பாலைக் குடிக்கும்." },
+    "context": "Milk offerings to cobras are part of some devotional practices in South Asia.",
+    "evidence": "Snakes are carnivores and milk is not part of any snake's natural diet. Dehydrated captive snakes may drink liquid, which can make them ill.",
+    "explanation": "This entry concerns the biological claim only. The devotional tradition itself is cultural practice and deserves respect.",
+    "refs": ["reptile-db"]
+  },
+  {
+    "id": "naga-reverence",
+    "kind": "cultural",
+    "species": ["indian-cobra"],
+    "claim": { "en": "The naga is a protective, sacred being.", "si": "නාගයා ආරක්ෂාව සපයන පූජනීය සත්වයෙකි.", "ta": "நாகம் காவல் தரும் புனித உயிரினம்." },
+    "context": "Naga reverence appears in Sri Lankan Buddhist and Hindu traditions, including the story of the naga king Mucalinda sheltering the Buddha, and naga imagery at temples such as the guard stones at Anuradhapura.",
+    "evidence": "This is cultural belief, not a zoological claim, so science neither confirms nor refutes it.",
+    "explanation": "Respect for cobras in these traditions has helped many snakes survive near people. Cultural reverence and keeping a safe distance fit together well.",
+    "refs": []
+  },
+  {
+    "id": "tourniquet",
+    "kind": "unsupported",
+    "species": [],
+    "claim": { "en": "Tie a tight tourniquet, cut the bite or suck out the venom.", "si": "තද බැඳුමක් දමන්න, දෂ්ට කළ තැන කපන්න, නැතහොත් විෂ උරා ගන්න.", "ta": "இறுக்கமாகக் கட்டுங்கள், கடிபட்ட இடத்தை வெட்டுங்கள் அல்லது விஷத்தை உறிஞ்சுங்கள்." },
+    "context": "Traditional first-aid advice still repeated in many places.",
+    "evidence": "Medical guidance from WHO and the Sri Lanka Medical Association advises against tourniquets, cutting, suction and herbal applications. They can cause tissue damage and delay proper treatment.",
+    "explanation": "Keep the person calm and still, immobilise the bitten limb, remove rings and tight items, and get to a hospital immediately.",
+    "refs": ["slma-firstaid", "who-facts", "who-guidelines"]
+  }
+]

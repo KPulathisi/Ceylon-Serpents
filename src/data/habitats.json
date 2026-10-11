@@ -1,0 +1,65 @@
+[
+  {
+    "id": "wet-forest",
+    "zone": "wet",
+    "name": { "en": "Wet-zone rainforest", "si": "තෙත් කලාප වැසි වනාන්තර", "ta": "ஈர வலய மழைக்காடு" },
+    "image": "rainforest-light",
+    "en": "Humid, evergreen forest in the island's south-west, from lowland rainforest such as Sinharaja to the lower hills. Home to many of Sri Lanka's endemic snakes, especially arboreal and leaf-litter species.",
+    "si": "දිවයිනේ නිරිතදිග කොටසේ, සිංහරාජය වැනි පහත්බිම් වැසි වනාන්තරවල සිට පහළ කඳුකරය දක්වා වූ තෙතමනය සහිත සදාහරිත වනාන්තර. ශ්‍රී ලංකාවට ආවේණික සර්පයින් රැසකගේ නිවහන.",
+    "ta": "தீவின் தென்மேற்கில், சிங்கராஜா போன்ற தாழ்நில மழைக்காடுகளிலிருந்து கீழ் மலைப்பகுதிகள் வரை பரந்துள்ள ஈரப்பதமான பசுமைமாறாக் காடுகள். இலங்கைக்கே உரிய பல பாம்புகளின் வாழிடம்."
+  },
+  {
+    "id": "dry-forest",
+    "zone": "dry",
+    "name": { "en": "Dry-zone forest and scrub", "si": "වියළි කලාප වනාන්තර සහ පඳුරු බිම්", "ta": "வறண்ட வலயக் காடுகளும் புதர்களும்" },
+    "image": null,
+    "en": "Seasonal forest, thorn scrub and open woodland across the north, east and south-east, shaped by a long dry season. Ground-dwelling and nocturnal species are common.",
+    "si": "දිගු වියළි කාලයකට හැඩගැසුණු, උතුර, නැගෙනහිර සහ ගිනිකොන දෙසින් පැතිරී ඇති සෘතුමය වනාන්තර, කටු පඳුරු සහ විවෘත වනබිම්.",
+    "ta": "நீண்ட வறண்ட காலத்தால் வடிவமைக்கப்பட்ட, வடக்கு, கிழக்கு, தென்கிழக்குப் பகுதிகளில் பரந்துள்ள பருவக் காடுகள், முட்புதர்கள், திறந்த காடுகள்."
+  },
+  {
+    "id": "grassland",
+    "zone": "mixed",
+    "name": { "en": "Grassland", "si": "තණබිම්", "ta": "புல்வெளி" },
+    "image": null,
+    "en": "Open grasslands, from lowland savannah to the patana grasslands of the hills. Snakes here depend on cover in tall grass, rock crevices and burrows.",
+    "si": "පහත්බිම් සැවානා සිට කඳුකරයේ පතන තණබිම් දක්වා විවෘත තණබිම්.",
+    "ta": "தாழ்நிலப் புல்வெளிகள் முதல் மலைநாட்டுப் பத்தனைப் புல்வெளிகள் வரையிலான திறந்த புல்நிலங்கள்."
+  },
+  {
+    "id": "wetlands",
+    "zone": "mixed",
+    "name": { "en": "Wetlands", "si": "තෙත්බිම්", "ta": "ஈரநிலங்கள்" },
+    "image": null,
+    "en": "Tanks (reservoirs), marshes, streams and canals. Rich in frogs and fish, which attract water snakes and the predators that follow them.",
+    "si": "වැව්, වගුරු බිම්, ඇළ දොළ. ගෙම්බන් සහ මසුන් බහුල බැවින් ජල සර්පයින් ආකර්ෂණය කරයි.",
+    "ta": "குளங்கள், சதுப்புநிலங்கள், ஓடைகள், கால்வாய்கள். தவளைகளும் மீன்களும் நிறைந்திருப்பதால் நீர்ப்பாம்புகளை ஈர்க்கின்றன."
+  },
+  {
+    "id": "agricultural",
+    "zone": "mixed",
+    "name": { "en": "Paddy fields and farmland", "si": "කුඹුරු සහ ගොවිබිම්", "ta": "வயல்களும் விவசாய நிலங்களும்" },
+    "image": null,
+    "en": "Paddy fields, chena, plantations and crop land. Rodents gather around harvests, and snakes that hunt rodents follow, which is why many bites happen during farm work.",
+    "si": "කුඹුරු, හේන්, වතු සහ වගා බිම්. අස්වනු කාලයේ මීයන් රැස් වන අතර ඔවුන් දඩයම් කරන සර්පයින් ද පැමිණේ.",
+    "ta": "வயல்கள், சேனைகள், தோட்டங்கள், பயிர் நிலங்கள். அறுவடைக் காலத்தில் எலிகள் கூடுவதால், அவற்றை வேட்டையாடும் பாம்புகளும் வருகின்றன."
+  },
+  {
+    "id": "home-gardens",
+    "zone": "mixed",
+    "name": { "en": "Home gardens and villages", "si": "ගෙවතු සහ ගම්මාන", "ta": "வீட்டுத் தோட்டங்களும் கிராமங்களும்" },
+    "image": null,
+    "en": "Gardens, wood piles, walls and the edges of homes. Many species live close to people without being seen, so tidy surroundings and good lighting matter.",
+    "si": "ගෙවතු, දර ගොඩවල්, බිත්ති සහ නිවෙස් අවට. බොහෝ විශේෂ නොපෙනී මිනිසුන් අසල ජීවත් වේ.",
+    "ta": "தோட்டங்கள், விறகுக் குவியல்கள், சுவர்கள், வீடுகளின் ஓரங்கள். பல இனங்கள் கண்ணுக்குத் தெரியாமல் மனிதர்களுக்கு அருகில் வாழ்கின்றன."
+  },
+  {
+    "id": "coastal",
+    "zone": "coast",
+    "name": { "en": "Coasts and the sea", "si": "වෙරළ සහ මුහුද", "ta": "கடற்கரையும் கடலும்" },
+    "image": null,
+    "en": "Sandy coastal scrub, lagoons, estuaries and shallow seas. Includes the dry coastal north-west and the marine habitat of sea snakes.",
+    "si": "වැලි සහිත වෙරළබඩ පඳුරු, කලපු, මෝය සහ නොගැඹුරු මුහුද.",
+    "ta": "மணற்பாங்கான கடலோரப் புதர்கள், களப்புகள், கழிமுகங்கள், ஆழமற்ற கடல்."
+  }
+]

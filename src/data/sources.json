@@ -1,0 +1,106 @@
+[
+  {
+    "id": "slma-firstaid",
+    "title": "Snakebite Prevention & First Aid",
+    "publisher": "Sri Lanka Medical Association",
+    "url": "https://slma.lk/snakebite-prevention-first-aid/",
+    "accessed": "2026-10-11",
+    "use": "First aid, prevention, medically important species"
+  },
+  {
+    "id": "slma-sbc",
+    "title": "SLMA Expert Committee on Snakebite",
+    "publisher": "Sri Lanka Medical Association",
+    "url": "https://slma.lk/sbc2/",
+    "accessed": "2026-10-11",
+    "use": "Clinical guidance and Sinhala/Tamil resources"
+  },
+  {
+    "id": "slma-guidelines",
+    "title": "Guidelines for the Management of Snakebite in Hospital",
+    "publisher": "SLMA Expert Committee on Snakebite",
+    "url": "https://slma.lk/sbc2/sbc_guidelines/",
+    "accessed": "2026-10-11",
+    "use": "Hospital management context"
+  },
+  {
+    "id": "who-facts",
+    "title": "Snakebite envenoming: the facts",
+    "publisher": "World Health Organization",
+    "url": "https://www.who.int/health-topics/snakebite",
+    "accessed": "2026-10-11",
+    "use": "Public-health context and prevention"
+  },
+  {
+    "id": "who-guidelines",
+    "title": "Guidelines for the Management of Snakebites (2nd ed.)",
+    "publisher": "WHO Regional Office for South-East Asia",
+    "url": "https://www.who.int/publications/i/item/9789290225300",
+    "accessed": "2026-10-11",
+    "use": "First aid and what not to do"
+  },
+  {
+    "id": "sis-common",
+    "title": "Common Snakes of Sri Lanka",
+    "publisher": "Snake Identification Service of Sri Lanka",
+    "url": "https://snakesidentification.org/common-snakes-of-sri-lanka/",
+    "accessed": "2026-10-11",
+    "use": "Species list, local names, habitats"
+  },
+  {
+    "id": "sis-paper",
+    "title": "Web-based snake identification service in Sri Lanka (Toxicon, 2021)",
+    "publisher": "Elsevier / ScienceDirect",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0041010121003081",
+    "accessed": "2026-10-11",
+    "use": "Limits of identification from photographs"
+  },
+  {
+    "id": "pyron2013",
+    "title": "Snake diversity and evolutionary history in Sri Lanka (PubMed 23261713, Elsevier 2012/13)",
+    "publisher": "PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23261713/",
+    "accessed": "2026-10-11",
+    "use": "Snake diversity and evolutionary history in Sri Lanka"
+  },
+  {
+    "id": "mallik2020",
+    "title": "Revision of the Ahaetulla nasuta species complex (Mallik et al., 2020), as summarised by The Reptile Database",
+    "publisher": "The Reptile Database",
+    "url": "https://reptile-database.reptarium.cz/species?genus=Ahaetulla&species=nasuta",
+    "accessed": "2026-10-11",
+    "use": "Taxonomic status of Ahaetulla nasuta"
+  },
+  {
+    "id": "maduwage-hnv",
+    "title": "Hump-nosed pit viper (Hypnale spp.) identification and comparison study",
+    "publisher": "ResearchGate",
+    "url": "https://www.researchgate.net/publication/232933076",
+    "accessed": "2026-10-11",
+    "use": "Difficulty separating Hypnale species"
+  },
+  {
+    "id": "kasturiratne",
+    "title": "The socio-economic burden of snakebite in Sri Lanka (Kasturiratne et al., PLoS NTD 2017)",
+    "publisher": "PLoS Neglected Tropical Diseases",
+    "url": "https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0005647",
+    "accessed": "2026-10-11",
+    "use": "National snakebite burden"
+  },
+  {
+    "id": "reptile-db",
+    "title": "The Reptile Database",
+    "publisher": "Uetz, P. et al.",
+    "url": "https://reptile-database.reptarium.cz/",
+    "accessed": "2026-10-11",
+    "use": "Scientific names, taxonomy and distribution"
+  },
+  {
+    "id": "suwaseriya",
+    "title": "1990 Suwa Seriya ambulance service",
+    "publisher": "1990 Suwa Seriya Foundation",
+    "url": "https://www.1990.lk/",
+    "accessed": "2026-10-11",
+    "use": "Emergency ambulance number"
+  }
+]
