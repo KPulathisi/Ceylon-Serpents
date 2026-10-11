@@ -92,7 +92,7 @@ export default {
 
     // Try the configured model first, then Google's rolling alias and known fallbacks, so a
     // retired model name doesn't break the site. If a model rejects the JSON schema, retry without it.
-    const models = [...new Set([env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-2.0-flash'].filter(Boolean))]
+    const models = [...new Set([env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-3.8-flash', 'gemini-2.5-flash', 'gemini-2.0-flash'].filter(Boolean))]
     const prompt = buildPrompt(cands, lang)
     let parsed, model, lastStatus = 0, lastDetail = ''
 
