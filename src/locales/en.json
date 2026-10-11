@@ -7,7 +7,6 @@
     "library": "Snake library",
     "habitats": "Habitats",
     "knowledge": "Knowledge corner",
-    "collection": "My collection",
     "sources": "About & sources",
     "bite": "Snakebite? Get help",
     "menu": "Menu",
@@ -211,7 +210,28 @@
     "matched": "Matches {m} of {t} answers",
     "unclear": "These answers don't narrow things down reliably. Several quite different species fit equally well, so we can't suggest a likely match. Browse the library or compare the species below.",
     "tooFew": "Answer at least two questions to see possible matches.",
-    "compareThese": "Compare these species"
+    "compareThese": "Compare these species",
+    "aiPrivacy": "To suggest species, your photo is resized, stripped of location data and sent through our server to Google Gemini. This site doesn't store it; Google processes it under its API terms.",
+    "aiRun": "Analyse with AI",
+    "localOnly": "Skip AI, answer questions only",
+    "aiTitle": "AI suggestions",
+    "aiLoading": "Analysing photo…",
+    "aiNote": "Suggestions come from Google Gemini, a general-purpose AI model. It has not been validated on Sri Lankan snakes and can be wrong. Use it to start learning, never to decide whether a snake is safe.",
+    "aiNotSnake": "The AI doesn't see a snake in this photo. Try a clearer photo, or answer the questions below.",
+    "aiUnclear": "The AI couldn't make out the animal clearly, so treat these suggestions with extra caution.",
+    "aiPoor": "Photo quality is poor, so these suggestions are especially uncertain.",
+    "aiNone": "The AI couldn't suggest a species from this photo. Answer the questions below instead.",
+    "aiError": "The AI service isn't available right now. You can still answer the questions below.",
+    "aiQuota": "The AI service has reached its usage limit for now. Try again later, or answer the questions below.",
+    "match": {
+      "strong": "Strong visual match",
+      "partial": "Partial visual match",
+      "weak": "Weak visual match"
+    },
+    "notInLibrary": "Not in our library yet",
+    "refine": "Refine by describing what you see",
+    "aiBy": "Model: {m}. AI can be wrong.",
+    "ledeAi": "An experimental, non-diagnostic guide. Your photo leaves your device only if you choose AI analysis."
   },
   "habitats": {
     "title": "Explore habitats",
@@ -244,14 +264,17 @@
     "plain": "In plain words",
     "play": "Play",
     "pause": "Pause",
-    "readMore": "Read article"
-  },
-  "collection": {
-    "title": "My collection",
-    "lede": "Species and articles you've saved, stored only in this browser.",
-    "empty": "Nothing saved yet. Use Save on any species or article to keep it here.",
-    "clearAll": "Clear all saved items",
-    "confirm": "Remove all saved items from this browser?"
+    "readMore": "Read article",
+    "folklore": "Folklore and stories",
+    "folkloreLede": "Legends, traditions and beliefs about snakes from across Sri Lanka, with where each comes from. Folklore is culture, not zoology, and it's labelled that way.",
+    "folk": {
+      "legend": "Legend",
+      "tradition": "Tradition",
+      "belief": "Folk belief"
+    },
+    "videoAi": "AI-generated video, for illustration only",
+    "example": "Sri Lankan example",
+    "sources": "Sources"
   },
   "sources": {
     "title": "About and sources",
@@ -266,7 +289,7 @@
     "limits": [
       "The species list is a starting selection, not a complete checklist.",
       "Some Sinhala and Tamil names and translations are missing or provisional.",
-      "The photo guide uses your answers, not image recognition, because no validated model is available.",
+      "AI photo suggestions come from a general-purpose model (Google Gemini) that has not been validated on Sri Lankan snakes.",
       "Conservation assessments have not yet been added."
     ]
   },
@@ -274,5 +297,11 @@
     "note": "An educational field guide to Sri Lanka's snakes. Not a medical or emergency service.",
     "made": "Built as a static, privacy-respecting site. No tracking."
   },
-  "zones": { "wet": "Wet zone", "dry": "Dry zone", "intermediate": "Intermediate zone", "coast": "Coast", "mixed": "Across zones" }
+  "zones": {
+    "wet": "Wet zone",
+    "dry": "Dry zone",
+    "intermediate": "Intermediate zone",
+    "coast": "Coast",
+    "mixed": "Across zones"
+  }
 }

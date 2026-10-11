@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # URL of the Cloudflare Worker that proxies Gemini (NOT the Gemini key).
+          # Set it under Settings → Secrets and variables → Actions (as a secret or a variable).
+          VITE_IDENTIFY_ENDPOINT: ${{ secrets.VITE_IDENTIFY_ENDPOINT || vars.VITE_IDENTIFY_ENDPOINT }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

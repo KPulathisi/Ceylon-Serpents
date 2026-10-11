@@ -2,48 +2,136 @@
   "locomotion": [
     {
       "id": "lateral-undulation",
-      "name": { "en": "Lateral undulation", "si": "පාර්ශ්වික රැළි චලනය", "ta": "பக்கவாட்டு அலை இயக்கம்" },
+      "name": {
+        "en": "Lateral undulation",
+        "si": "පාර්ශ්වික රැළි චලනය",
+        "ta": "பக்கவாட்டு அலை இயக்கம்"
+      },
       "en": "The familiar S-shaped glide. Waves pass down the body and each curve pushes sideways against stones, stems or uneven ground, driving the snake forward. Most snakes use it, on land and in water.",
       "si": "හුරුපුරුදු S හැඩැති ගමන. සිරුර දිගේ රැළි ගමන් කරන අතර එක් එක් වංගුව ගල්, කඳන් හෝ අසමාන බිමට එරෙහිව තල්ලු කරමින් සර්පයා ඉදිරියට ගෙන යයි.",
       "ta": "நன்கு அறிந்த S-வடிவ நகர்வு. உடல் முழுவதும் அலைகள் பரவி, ஒவ்வொரு வளைவும் கற்கள், தண்டுகள், சமமற்ற தரையில் பக்கவாட்டில் தள்ளி பாம்பை முன்னோக்கிச் செலுத்துகிறது.",
-      "alt": "Diagram: a snake body forming repeated S-curves, with arrows showing each curve pushing sideways and the snake moving forward."
+      "alt": "Diagram: a snake body forming repeated S-curves, with arrows showing each curve pushing sideways and the snake moving forward.",
+      "example": "checkered-keelback",
+      "video": "",
+      "videoAi": true
     },
     {
       "id": "rectilinear",
-      "name": { "en": "Rectilinear movement", "si": "සෘජු රේඛීය චලනය", "ta": "நேர்கோட்டு இயக்கம்" },
+      "name": {
+        "en": "Rectilinear movement",
+        "si": "සෘජු රේඛීය චලනය",
+        "ta": "நேர்கோட்டு இயக்கம்"
+      },
       "en": "A slow, straight 'caterpillar' crawl. The belly scales are lifted, pulled forward and anchored in sections while the body stays almost straight. Heavy-bodied snakes such as pythons and vipers use it to creep quietly.",
       "si": "මන්දගාමී, සෘජු 'දළඹු' ගමනක්. සිරුර බොහෝ දුරට සෘජුව තබා ගනිමින් උදර කොරපොතු කොටස් වශයෙන් ඔසවා ඉදිරියට ඇද රඳවයි.",
       "ta": "மெதுவான, நேரான 'கம்பளிப்பூச்சி' நகர்வு. உடல் நேராக இருக்க, வயிற்றுச் செதில்கள் பகுதி பகுதியாக உயர்த்தி முன்னோக்கி இழுக்கப்படுகின்றன.",
-      "alt": "Diagram: a straight snake body with bands of belly scales bunching and stretching in a wave from head to tail."
+      "alt": "Diagram: a straight snake body with bands of belly scales bunching and stretching in a wave from head to tail.",
+      "example": "indian-python",
+      "video": "",
+      "videoAi": true
     },
     {
       "id": "concertina",
-      "name": { "en": "Concertina movement", "si": "කොන්සර්ටිනා චලනය", "ta": "துருத்தி இயக்கம்" },
+      "name": {
+        "en": "Concertina movement",
+        "si": "කොන්සර්ටිනා චලනය",
+        "ta": "துருத்தி இயக்கம்"
+      },
       "en": "Used in tight spaces such as tunnels or when climbing. The snake anchors its rear coils, extends the front, then anchors the front and draws the rear up behind it, like a concertina opening and closing.",
       "si": "උමං වැනි පටු ස්ථානවල හෝ නගින විට භාවිත වේ. පසුපස වංගු රඳවා ඉදිරිපස දිගු කර, පසුව ඉදිරිපස රඳවා පසුපස ඇද ගනී.",
       "ta": "சுரங்கங்கள் போன்ற குறுகிய இடங்களில் அல்லது ஏறும்போது பயன்படுகிறது. பின்பகுதியை நிலைநிறுத்தி முன்பகுதியை நீட்டி, பின் முன்பகுதியை நிலைநிறுத்தி பின்பகுதியை இழுக்கிறது.",
-      "alt": "Diagram: a snake in a tunnel bunching its body into tight folds, then stretching its head forward."
+      "alt": "Diagram: a snake in a tunnel bunching its body into tight folds, then stretching its head forward.",
+      "example": "rat-snake",
+      "video": "",
+      "videoAi": true
     },
     {
       "id": "sidewinding",
-      "name": { "en": "Sidewinding", "si": "පැති ඔස්සේ ගමන", "ta": "பக்கச்சுருள் இயக்கம்" },
+      "name": {
+        "en": "Sidewinding",
+        "si": "පැති ඔස්සේ ගමන",
+        "ta": "பக்கச்சுருள் இயக்கம்"
+      },
       "en": "On loose sand, some small vipers lift parts of their body clear of the ground and move diagonally, leaving separate parallel tracks. Saw-scaled vipers are documented using this on sandy ground.",
       "si": "ලිහිල් වැලි මත, සමහර කුඩා පොළඟුන් සිරුරේ කොටස් බිමෙන් ඔසවා විකර්ණව ගමන් කරයි.",
       "ta": "தளர்ந்த மணலில், சில சிறிய விரியன்கள் உடலின் பகுதிகளைத் தரையிலிருந்து உயர்த்தி மூலைவிட்டமாக நகர்கின்றன.",
-      "alt": "Diagram: a snake moving diagonally across sand, leaving a series of separate parallel J-shaped tracks."
+      "alt": "Diagram: a snake moving diagonally across sand, leaving a series of separate parallel J-shaped tracks.",
+      "example": "saw-scaled-viper",
+      "video": "",
+      "videoAi": true
     }
   ],
   "extraLocomotion": {
-    "bridging": { "en": "Gap bridging", "si": "හිඩැස් පැනීම", "ta": "இடைவெளி தாண்டுதல்" },
-    "burrowing": { "en": "Burrowing", "si": "පසෙහි හාරා යාම", "ta": "நிலத்தைத் துளைத்தல்" },
-    "swimming": { "en": "Swimming", "si": "පිහිනීම", "ta": "நீந்துதல்" }
+    "bridging": {
+      "en": "Gap bridging",
+      "si": "හිඩැස් පැනීම",
+      "ta": "இடைவெளி தாண்டுதல்"
+    },
+    "burrowing": {
+      "en": "Burrowing",
+      "si": "පසෙහි හාරා යාම",
+      "ta": "நிலத்தைத் துளைத்தல்"
+    },
+    "swimming": {
+      "en": "Swimming",
+      "si": "පිහිනීම",
+      "ta": "நீந்துதல்"
+    }
   },
   "topics": [
-    { "id": "lifestyles", "title": { "en": "Up, down and in the water", "si": "ගස් මත, බිම සහ ජලයේ", "ta": "மரத்தில், தரையில், நீரில்" }, "en": "Arboreal snakes like vine snakes and green pit vipers have long, gripping or slender bodies. Ground snakes such as Russell's vipers are heavier. Aquatic keelbacks and sea snakes have adaptations for swimming. Many species move between these worlds." },
-    { "id": "defence", "title": { "en": "Defensive displays", "si": "ආරක්ෂක ප්‍රදර්ශන", "ta": "தற்காப்புக் காட்சிகள்" }, "en": "Hooding, hissing, inflating the body, gaping and rasping scales are warnings meant to avoid a fight. Several harmless snakes use the same displays as dangerous ones, so a display never identifies a species." },
-    { "id": "activity", "title": { "en": "Day and night", "si": "දිවා සහ රාත්‍රී", "ta": "பகலும் இரவும்" }, "en": "Vine snakes and rat snakes are active by day; kraits and Russell's vipers mostly at night. Activity also changes with season, rain and temperature." },
-    { "id": "feeding", "title": { "en": "What snakes eat", "si": "සර්පයින් ආහාරයට ගන්නේ කුමක්ද", "ta": "பாம்புகள் உண்பது என்ன" }, "en": "All snakes are predators. Diets range from termite larvae (blind snakes) to fish (keelbacks), other snakes (kraits) and rodents (rat snakes and vipers), which makes snakes important pest controllers." },
-    { "id": "shedding", "title": { "en": "Shedding skin", "si": "සම හැලීම", "ta": "தோலுரித்தல்" }, "en": "Snakes shed the outer layer of their skin, including the clear scale over each eye, several times a year. Before shedding their eyes turn cloudy and they often hide, which can make them more defensive." },
-    { "id": "camouflage", "title": { "en": "Camouflage", "si": "වෙස්වලාගැනීම", "ta": "உருமறைப்பு" }, "en": "Green tree snakes vanish among leaves; hump-nosed vipers disappear into leaf litter. Camouflage is why most bites happen to people who never saw the snake, and why looking before you step or reach matters." }
+    {
+      "id": "lifestyles",
+      "title": {
+        "en": "Up, down and in the water",
+        "si": "ගස් මත, බිම සහ ජලයේ",
+        "ta": "மரத்தில், தரையில், நீரில்"
+      },
+      "en": "Arboreal snakes like vine snakes and green pit vipers have long, gripping or slender bodies. Ground snakes such as Russell's vipers are heavier. Aquatic keelbacks and sea snakes have adaptations for swimming. Many species move between these worlds."
+    },
+    {
+      "id": "defence",
+      "title": {
+        "en": "Defensive displays",
+        "si": "ආරක්ෂක ප්‍රදර්ශන",
+        "ta": "தற்காப்புக் காட்சிகள்"
+      },
+      "en": "Hooding, hissing, inflating the body, gaping and rasping scales are warnings meant to avoid a fight. Several harmless snakes use the same displays as dangerous ones, so a display never identifies a species."
+    },
+    {
+      "id": "activity",
+      "title": {
+        "en": "Day and night",
+        "si": "දිවා සහ රාත්‍රී",
+        "ta": "பகலும் இரவும்"
+      },
+      "en": "Vine snakes and rat snakes are active by day; kraits and Russell's vipers mostly at night. Activity also changes with season, rain and temperature."
+    },
+    {
+      "id": "feeding",
+      "title": {
+        "en": "What snakes eat",
+        "si": "සර්පයින් ආහාරයට ගන්නේ කුමක්ද",
+        "ta": "பாம்புகள் உண்பது என்ன"
+      },
+      "en": "All snakes are predators. Diets range from termite larvae (blind snakes) to fish (keelbacks), other snakes (kraits) and rodents (rat snakes and vipers), which makes snakes important pest controllers."
+    },
+    {
+      "id": "shedding",
+      "title": {
+        "en": "Shedding skin",
+        "si": "සම හැලීම",
+        "ta": "தோலுரித்தல்"
+      },
+      "en": "Snakes shed the outer layer of their skin, including the clear scale over each eye, several times a year. Before shedding their eyes turn cloudy and they often hide, which can make them more defensive."
+    },
+    {
+      "id": "camouflage",
+      "title": {
+        "en": "Camouflage",
+        "si": "වෙස්වලාගැනීම",
+        "ta": "உருமறைப்பு"
+      },
+      "en": "Green tree snakes vanish among leaves; hump-nosed vipers disappear into leaf litter. Camouflage is why most bites happen to people who never saw the snake, and why looking before you step or reach matters."
+    }
   ]
 }

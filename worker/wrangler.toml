@@ -1,0 +1,19 @@
+# Cloudflare Worker that proxies photo identification requests to Google Gemini.
+# The Gemini key is NEVER stored here. Add it as a secret:  npx wrangler secret put GEMINI_API_KEY
+name = "ceylon-serpents-identify"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+[vars]
+# Comma-separated list of sites allowed to call this Worker (no trailing slash).
+# Include your GitHub Pages origin and the local dev server.
+ALLOWED_ORIGINS = "https://kpulathisi.github.io,http://localhost:5173"
+# Gemini model to use. Check the current model names in Google AI Studio.
+GEMINI_MODEL = "gemini-2.5-flash"
+
+# Optional abuse protection: Cloudflare's built-in rate limiter (10 requests per minute per visitor).
+# Uncomment if your account supports the Rate Limiting binding.
+# [[ratelimits]]
+# name = "RATE_LIMITER"
+# namespace_id = "1001"
+# simple = { limit = 10, period = 60 }

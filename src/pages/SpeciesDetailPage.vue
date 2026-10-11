@@ -1,19 +1,19 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
-import { ArrowLeft, Bookmark, BookmarkCheck, Columns3, Eye, Sparkles } from 'lucide-vue-next'
+import { ArrowLeft, Columns3, Eye, Sparkles } from 'lucide-vue-next'
 import SpeciesMedia from '../components/SpeciesMedia.vue'
 import SpeciesCard from '../components/SpeciesCard.vue'
 import MedicalBadge from '../components/MedicalBadge.vue'
 import LocalName from '../components/LocalName.vue'
 import SafetyNotice from '../components/SafetyNotice.vue'
-import { useData } from '../composables/useData.js'
+import { useData, orderedImages } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
 import { useLocalCollection } from '../composables/useLocalCollection.js'
 
 const props = defineProps({ id: { type: String, required: true } })
 const { t, l, lang } = useLanguage()
-const { getSpecies, getHabitat, getSource, getCredit, getLocomotion, behavior } = useData()
-const { isSaved, toggleSaved, inCompare, toggleCompare, compare } = useLocalCollection()
+const { getSpecies, getHabitat, getSource, getLocomotion, behavior } = useData()
+const { inCompare, toggleCompare, compare } = useLocalCollection()
 
 const s = computed(() => getSpecies(props.id))
 const active = ref(0)
@@ -32,10 +32,8 @@ const moveName = (id) => {
   return m ? l(m.name) : l(behavior.extraLocomotion[id] || { en: id })
 }
 const thumb = (f) => `${import.meta.env.BASE_URL}images/${f}-sm.webp`
-const credit = computed(() => {
-  const img = s.value?.images[active.value]
-  return img ? getCredit(img.credit) : null
-})
+const imgs = computed(() => (s.value ? orderedImages(s.value) : []))
+const credit = computed(() => imgs.value[active.value] || null)
 </script>
 
 <template>
@@ -46,9 +44,9 @@ const credit = computed(() => {
 
     <section class="wrap top">
       <div class="gallery">
-        <SpeciesMedia :key="active" :species="s" :index="active" eager sizes="(min-width: 900px) 60vw, 100vw" />
-        <div v-if="s.images.length > 1" class="thumbs" role="group" :aria-label="t('profile.gallery')">
-          <button v-for="(img, i) in s.images" :key="img.file" :aria-pressed="active === i" :aria-label="img.alt" @click="active = i">
+        <SpeciesMedia v-model:index="active" :species="s" eager sizes="(min-width: 900px) 60vw, 100vw" />
+        <div v-if="imgs.length > 1" class="thumbs" role="group" :aria-label="t('profile.gallery')">
+          <button v-for="(img, i) in imgs" :key="img.file" :aria-pressed="active === i" :aria-label="img.alt" @click="active = i">
             <img :src="thumb(img.file)" alt="" width="120" height="80" loading="lazy" />
           </button>
         </div>
@@ -73,10 +71,7 @@ const credit = computed(() => {
           <span class="act">{{ t('activity.' + s.activity) }}</span>
         </div>
         <div class="btns">
-          <button class="btn small" :aria-pressed="isSaved('species', s.id)" @click="toggleSaved('species', s.id)">
-            <component :is="isSaved('species', s.id) ? BookmarkCheck : Bookmark" aria-hidden="true" />{{ isSaved('species', s.id) ? t('common.saved') : t('common.save') }}
-          </button>
-          <button class="btn small ghost" :disabled="!inCompare(s.id) && compare.length >= 3" @click="toggleCompare(s.id)">
+          <button class="btn small" :disabled="!inCompare(s.id) && compare.length >= 3" @click="toggleCompare(s.id)">
             <Columns3 aria-hidden="true" />{{ inCompare(s.id) ? t('common.inCompare') : t('common.compare') }}
           </button>
         </div>

@@ -1,13 +1,42 @@
 [
-  { "id": "img-gpv1", "file": "green-pit-viper.webp", "subject": "Sri Lankan green pit viper, Craspedocephalus trigonocephalus", "creator": "Damith Danthanarayana (as captioned in source)", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-gpv2", "file": "green-pit-viper-branch.webp", "subject": "Sri Lankan green pit viper (captioned Trimeresurus trigonocephalus)", "creator": "Unknown", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-cobra", "file": "indian-cobra.webp", "subject": "Cobra with hood spread", "creator": "Unknown (stock photograph)", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-hnv", "file": "hump-nosed-viper.webp", "subject": "Hump-nosed viper, Hypnale sp.", "creator": "Unknown", "source": "Image reference supplied in the project brief (BEEZ blog)", "licence": "Not verified" },
-  { "id": "img-vine-sinharaja", "file": "vine-snake-sinharaja.webp", "subject": "Green vine snake, Sinharaja, Sri Lanka", "creator": "Unknown (stock photograph)", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-vine-head", "file": "vine-snake-head.webp", "subject": "Ahaetulla nasuta, head", "creator": "Unknown", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-vine-leaf", "file": "vine-snake-leaf.webp", "subject": "Green vine snake on a leaf (location unknown)", "creator": "Unknown (stock photograph)", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-forest", "file": "rainforest-light.webp", "subject": "Sunlight through tropical forest", "creator": "Unknown (stock photograph)", "source": "Image reference supplied in the project brief", "licence": "Not verified" },
-  { "id": "img-krait-plate", "file": "banded-krait-plate.webp", "subject": "Historical natural-history plate of a banded krait", "creator": "Annada Prasad Bagchi (as captioned)", "source": "Image reference supplied in the project brief", "licence": "Possibly public domain (historical); not verified" },
-  { "id": "img-merian", "file": "merian-plate.webp", "subject": "Maria Sibylla Merian plate (snake and caiman)", "creator": "Maria Sibylla Merian (1647–1717)", "source": "Natural History Museum (as captioned)", "licence": "Artwork public domain; photograph not verified" },
-  { "id": "img-tennent", "file": "tennent-ceylon.webp", "subject": "Sketches of the Natural History of Ceylon (Tennent, 1861)", "creator": "Sir J. Emerson Tennent (1861)", "source": "Maggs Bros. Ltd (as captioned)", "licence": "Book public domain; photograph not verified" }
+  {
+    "id": "img-vine-leaf",
+    "file": "vine-snake-leaf.webp",
+    "subject": "Green vine snake on a leaf (location unknown)",
+    "creator": "Unknown (stock photograph)",
+    "source": "Image reference supplied in the project brief",
+    "licence": "Not verified"
+  },
+  {
+    "id": "img-forest",
+    "file": "rainforest-light.webp",
+    "subject": "Sunlight through tropical forest",
+    "creator": "Unknown (stock photograph)",
+    "source": "Image reference supplied in the project brief",
+    "licence": "Not verified"
+  },
+  {
+    "id": "img-krait-plate",
+    "file": "banded-krait-plate.webp",
+    "subject": "Historical natural-history plate of a banded krait",
+    "creator": "Annada Prasad Bagchi (as captioned)",
+    "source": "Image reference supplied in the project brief",
+    "licence": "Possibly public domain (historical); not verified"
+  },
+  {
+    "id": "img-merian",
+    "file": "merian-plate.webp",
+    "subject": "Maria Sibylla Merian plate (snake and caiman)",
+    "creator": "Maria Sibylla Merian (1647–1717)",
+    "source": "Natural History Museum (as captioned)",
+    "licence": "Artwork public domain; photograph not verified"
+  },
+  {
+    "id": "img-tennent",
+    "file": "tennent-ceylon.webp",
+    "subject": "Sketches of the Natural History of Ceylon (Tennent, 1861)",
+    "creator": "Sir J. Emerson Tennent (1861)",
+    "source": "Maggs Bros. Ltd (as captioned)",
+    "licence": "Book public domain; photograph not verified"
+  }
 ]

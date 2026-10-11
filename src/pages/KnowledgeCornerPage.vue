@@ -1,12 +1,13 @@
 <script setup>
 import { ref } from 'vue'
-import BehaviorDiagram from '../components/BehaviorDiagram.vue'
+import LocomotionMedia from '../components/LocomotionMedia.vue'
+import FolkloreStory from '../components/FolkloreStory.vue'
 import MythFactCard from '../components/MythFactCard.vue'
 import { useData, imageSet } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
 
 const { t, l, lang } = useLanguage()
-const { behavior, myths, articles } = useData()
+const { behavior, myths, articles, folklore } = useData()
 const kinds = ['all', 'folklore', 'cultural', 'unsupported']
 const kind = ref('all')
 const img = (f) => imageSet(f)
@@ -20,6 +21,7 @@ const img = (f) => imageSet(f)
       <nav class="jump">
         <RouterLink :to="{ hash: '#behaviour' }">{{ t('knowledge.behaviour') }}</RouterLink>
         <RouterLink :to="{ hash: '#movement' }">{{ t('knowledge.movement') }}</RouterLink>
+        <RouterLink :to="{ hash: '#folklore' }">{{ t('knowledge.folklore') }}</RouterLink>
         <RouterLink :to="{ hash: '#myths' }">{{ t('knowledge.myths') }}</RouterLink>
         <RouterLink :to="{ hash: '#articles' }">{{ t('knowledge.articles') }}</RouterLink>
       </nav>
@@ -42,9 +44,22 @@ const img = (f) => imageSet(f)
         <p class="note">{{ t('knowledge.movementNote') }}</p>
         <div class="moves">
           <div v-for="m in behavior.locomotion" :key="m.id" class="move">
-            <BehaviorDiagram :mode="m" />
+            <LocomotionMedia :mode="m" />
             <p>{{ l(m) }}</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="folklore" class="section folk-band">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>{{ t('knowledge.folklore') }}</h2>
+          <p>{{ t('knowledge.folkloreLede') }}</p>
+          <p v-if="lang !== 'en'" class="tnote">{{ t('common.englishOnly') }}</p>
+        </div>
+        <div class="stories">
+          <FolkloreStory v-for="(f, i) in folklore" :key="f.id" :story="f" :index="i" />
         </div>
       </div>
     </section>
@@ -82,6 +97,10 @@ const img = (f) => imageSet(f)
 .moves { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 1.5rem; }
 .move p { margin-top: .8rem; font-size: var(--step--1); }
 @media (max-width: 760px) { .moves { grid-template-columns: 1fr; } }
+.folk-band { background: var(--paper); border-block: 1px solid var(--line); }
+.folk-band :deep(.story) { background: var(--parchment); }
+.stories { columns: 2 340px; column-gap: 1.75rem; }
+.stories > * { break-inside: avoid; margin-bottom: 1.75rem; }
 .kinds { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.5rem; }
 .articles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 1.75rem; }
 .art { text-decoration: none; color: var(--charcoal); display: grid; gap: .5rem; align-content: start; }

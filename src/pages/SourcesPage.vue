@@ -2,7 +2,12 @@
 import { useData } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
 const { t } = useLanguage()
-const { sources, imageCredits } = useData()
+const { sources, imageCredits, species } = useData()
+// Species photos carry their own credit fields; other site images are listed in imageCredits.json
+const credits = [
+  ...species.flatMap((sp) => sp.images.map((im) => ({ id: im.file, file: im.file + '.webp', subject: `${sp.names.en}, ${sp.scientificName}`, creator: im.creator, source: im.source, licence: im.licence }))),
+  ...imageCredits
+]
 </script>
 
 <template>
@@ -36,7 +41,7 @@ const { sources, imageCredits } = useData()
         <table>
           <thead><tr><th>File</th><th>Subject</th><th>Creator</th><th>Source</th><th>Licence</th></tr></thead>
           <tbody>
-            <tr v-for="c in imageCredits" :key="c.id"><td>{{ c.file }}</td><td>{{ c.subject }}</td><td>{{ c.creator }}</td><td>{{ c.source }}</td><td>{{ c.licence }}</td></tr>
+            <tr v-for="c in credits" :key="c.id"><td>{{ c.file }}</td><td>{{ c.subject }}</td><td>{{ c.creator }}</td><td>{{ c.source }}</td><td>{{ c.licence }}</td></tr>
           </tbody>
         </table>
       </div>

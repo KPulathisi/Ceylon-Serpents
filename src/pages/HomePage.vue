@@ -1,23 +1,34 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight, Camera, BookOpen } from 'lucide-vue-next'
 import SpeciesCard from '../components/SpeciesCard.vue'
 import HabitatMap from '../components/HabitatMap.vue'
-import BehaviorDiagram from '../components/BehaviorDiagram.vue'
+import LocomotionMedia from '../components/LocomotionMedia.vue'
 import MythFactCard from '../components/MythFactCard.vue'
 import SafetyNotice from '../components/SafetyNotice.vue'
 import ContourLines from '../components/ContourLines.vue'
-import { useData, imageSet } from '../composables/useData.js'
+import { useData, imageSet, orderedImages } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
 
 gsap.registerPlugin(ScrollTrigger)
 const { t, l, lang } = useLanguage()
-const { getSpecies, habitats, behavior, myths, getArticle } = useData()
+const { species, getSpecies, habitats, behavior, myths, getArticle } = useData()
+
+// Hero: cycle through every species that has a photo (green pit viper first), using its primary image
+const heroList = [...species.filter((s) => s.images.length)].sort((a, b) => (a.id === 'green-pit-viper' ? -1 : b.id === 'green-pit-viper' ? 1 : 0))
+const heroIdx = ref(0)
+const heroSp = computed(() => heroList[heroIdx.value])
+const heroNo = (s) => String(species.indexOf(s) + 1).padStart(2, '0')
+const heroName = (s) => (lang.value === 'en' ? s.names.en : s.names[lang.value]?.text || s.names.en)
+const heroNote = (s) => (lang.value !== 'en' && s[lang.value]?.summary) || s.en.summary
+let heroTimer = 0
+function nextHero() {
+  if (!document.hidden) heroIdx.value = (heroIdx.value + 1) % heroList.length
+}
 
 const featured = ['green-pit-viper', 'green-vine-snake', 'indian-cobra', 'russells-viper', 'hump-nosed-viper', 'common-krait'].map(getSpecies)
-const hero = imageSet('green-pit-viper')
 const vine = imageSet('vine-snake-sinharaja')
 const forest = imageSet('rainforest-light')
 const tennent = imageSet('tennent-ceylon')
@@ -31,18 +42,19 @@ const heroEl = ref(null)
 let ctx
 onMounted(() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  if (heroList.length > 1) heroTimer = setInterval(nextHero, 7000)
   ctx = gsap.context(() => {
     // One orchestrated entrance: photo settles, headline rises, field label is "pinned" on
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-    tl.from('.hero-img', { scale: 1.12, duration: 1.8 })
+    tl.from('.hero-media', { scale: 1.12, duration: 1.8 })
       .from('.hero-title .ln', { yPercent: 105, duration: 1, stagger: 0.12 }, 0.25)
       .from('.hero-lede, .hero-ctas', { opacity: 0, y: 16, duration: 0.8, stagger: 0.1 }, 0.8)
       .from('.hero .field-label', { opacity: 0, rotate: -6, y: 30, duration: 0.9 }, 1)
       .from('.hero .contours path', { strokeDashoffset: 1600, duration: 2.2, stagger: 0.05, ease: 'power1.out' }, 0)
-    gsap.to('.hero-img', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: heroEl.value, start: 'top top', end: 'bottom top', scrub: true } })
+    gsap.to('.hero-media', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: heroEl.value, start: 'top top', end: 'bottom top', scrub: true } })
   }, heroEl.value)
 })
-onBeforeUnmount(() => ctx?.revert())
+onBeforeUnmount(() => { ctx?.revert(); clearInterval(heroTimer) })
 
 // split title into lines on the full stop / natural break for the reveal
 const titleLines = () => {
@@ -57,7 +69,21 @@ const titleLines = () => {
   <div class="home">
     <!-- A. Hero -->
     <section ref="heroEl" class="hero">
-      <img class="hero-img" :src="hero.src" :srcset="hero.srcset" sizes="100vw" alt="A Sri Lankan green pit viper coiled around a dark branch." width="1290" height="860" fetchpriority="high" />
+      <div class="hero-media">
+        <img
+          v-for="(hs, i) in heroList"
+          :key="hs.id"
+          :class="['hero-img', { on: i === heroIdx }]"
+          :src="imageSet(orderedImages(hs)[0].file).src"
+          :srcset="imageSet(orderedImages(hs)[0].file).srcset"
+          sizes="100vw"
+          :alt="i === heroIdx ? orderedImages(hs)[0].alt : ''"
+          :aria-hidden="i !== heroIdx"
+          width="1290" height="860"
+          :fetchpriority="i === 0 ? 'high' : 'low'"
+          :loading="i === 0 ? 'eager' : 'lazy'"
+        />
+      </div>
       <div class="hero-shade" aria-hidden="true"></div>
       <ContourLines class="contours" />
       <div class="wrap hero-inner">
@@ -71,17 +97,19 @@ const titleLines = () => {
             <RouterLink to="/identify" class="btn outline-light"><Camera aria-hidden="true" />{{ t('home.ctaIdentify') }}</RouterLink>
           </div>
         </div>
-        <RouterLink to="/species/green-pit-viper" class="field-label hero-label">
-          <div class="fl-head"><span>{{ t('home.plateLabel') }}</span><span class="fl-no">No. 07</span></div>
-          <p class="fl-name">{{ lang === 'si' ? 'පලා පොළඟා' : 'Sri Lankan green pit viper' }}</p>
-          <p class="latin fl-latin">Craspedocephalus trigonocephalus</p>
-          <dl>
-            <dt>{{ t('profile.family') }}</dt><dd>Viperidae</dd>
-            <dt>{{ t('library.status') }}</dt><dd>{{ t('common.endemic') }}</dd>
-            <dt>{{ t('habitats.zones') }}</dt><dd>{{ t('home.plateLocality') }}</dd>
-          </dl>
-          <p class="fl-note">{{ t('home.plateNote') }}</p>
-        </RouterLink>
+        <Transition name="label" mode="out-in">
+          <RouterLink :key="heroSp.id" :to="`/species/${heroSp.id}`" class="field-label hero-label" aria-live="polite">
+            <div class="fl-head"><span>{{ t('home.plateLabel') }}</span><span class="fl-no">No. {{ heroNo(heroSp) }}</span></div>
+            <p class="fl-name">{{ heroName(heroSp) }}</p>
+            <p class="latin fl-latin">{{ heroSp.scientificName }}</p>
+            <dl>
+              <dt>{{ t('profile.family') }}</dt><dd>{{ heroSp.family }}</dd>
+              <dt>{{ t('library.status') }}</dt><dd>{{ heroSp.status === 'endemic' ? t('common.endemic') : t('common.native') }}</dd>
+              <dt>{{ t('library.medical') }}</dt><dd>{{ t('medical.' + heroSp.medical) }}</dd>
+            </dl>
+            <p class="fl-note">{{ heroNote(heroSp) }}</p>
+          </RouterLink>
+        </Transition>
       </div>
     </section>
 
@@ -133,7 +161,7 @@ const titleLines = () => {
           <button v-for="m in behavior.locomotion" :key="m.id" role="tab" :aria-selected="mode.id === m.id" class="chip" :aria-pressed="mode.id === m.id" @click="mode = m">{{ l(m.name) }}</button>
         </div>
         <div class="move-stage">
-          <BehaviorDiagram :key="mode.id" :mode="mode" />
+          <LocomotionMedia :key="mode.id" :mode="mode" />
           <p class="move-text">{{ l(mode) }}</p>
         </div>
       </div>
@@ -210,7 +238,12 @@ const titleLines = () => {
 <style scoped>
 /* Hero */
 .hero { position: relative; min-height: min(92vh, 860px); display: flex; align-items: flex-end; overflow: hidden; color: var(--paper); background: var(--forest-deep); }
-.hero-img { position: absolute; inset: -6% 0 0; width: 100%; height: 112%; object-fit: cover; object-position: 60% 40%; }
+.hero-media { position: absolute; inset: -6% 0 0; height: 112%; }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; opacity: 0; transition: opacity 1.6s ease; }
+.hero-img.on { opacity: 1; }
+.label-enter-active, .label-leave-active { transition: opacity .45s, transform .45s; }
+.label-enter-from { opacity: 0; transform: rotate(4deg) translateY(14px); }
+.label-leave-to { opacity: 0; transform: rotate(-2deg) translateY(-8px); }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14, 28, 20, .88) 0%, rgba(14, 28, 20, .55) 45%, rgba(14, 28, 20, .1) 75%), linear-gradient(0deg, rgba(14, 28, 20, .7), transparent 45%); }
 .contours { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .hero-inner { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem; padding-block: 5rem clamp(2.5rem, 6vw, 4.5rem); }

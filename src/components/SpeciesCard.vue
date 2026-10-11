@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { Bookmark, BookmarkCheck, Columns3 } from 'lucide-vue-next'
+import { Columns3 } from 'lucide-vue-next'
 import SpeciesMedia from './SpeciesMedia.vue'
 import MedicalBadge from './MedicalBadge.vue'
 import LocalName from './LocalName.vue'
@@ -9,7 +9,7 @@ import { useLocalCollection } from '../composables/useLocalCollection.js'
 
 const props = defineProps({ species: { type: Object, required: true }, layout: { type: String, default: 'gallery' }, actions: { type: Boolean, default: true }, sizes: { type: String, default: '' } })
 const { t, lang } = useLanguage()
-const { isSaved, toggleSaved, inCompare, toggleCompare, compare } = useLocalCollection()
+const { inCompare, toggleCompare, compare } = useLocalCollection()
 const s = computed(() => props.species)
 const primary = computed(() => {
   if (lang.value === 'en') return { text: s.value.names.en, lang: 'en' }
@@ -35,11 +35,6 @@ const secondary = computed(() => (lang.value === 'en' ? s.value.names.si : null)
         <span v-if="s.status === 'endemic'" class="endemic">{{ t('common.endemic') }}</span>
       </div>
       <div v-if="actions" class="actions">
-        <button class="mini" :aria-pressed="isSaved('species', s.id)" @click="toggleSaved('species', s.id)">
-          <component :is="isSaved('species', s.id) ? BookmarkCheck : Bookmark" aria-hidden="true" />
-          {{ isSaved('species', s.id) ? t('common.saved') : t('common.save') }}
-          <span class="sr-only">{{ s.names.en }}</span>
-        </button>
         <button class="mini" :aria-pressed="inCompare(s.id)" :disabled="!inCompare(s.id) && compare.length >= 3" @click="toggleCompare(s.id)">
           <Columns3 aria-hidden="true" />
           {{ inCompare(s.id) ? t('common.inCompare') : t('common.compare') }}

@@ -1,22 +1,52 @@
 /**
- * Image classification hook.
+ * Photo identification through Google Gemini, called via our Cloudflare Worker
+ * (see /worker). The Gemini key lives only in the Worker as a secret; the site just knows
+ * the Worker's URL, supplied at build time as VITE_IDENTIFY_ENDPOINT.
  *
- * No validated Sri Lankan snake classifier exists for this project, so MODEL is null and the
- * identification page runs the transparent guided matcher instead. Nothing here simulates AI output.
- *
- * To add a genuine model later (see README → "Adding a real model"):
- *   1. Train and evaluate on licensed, labelled Sri Lankan images, including an "unknown" class.
- *   2. Export to TensorFlow.js / ONNX and place it under public/model/.
- *   3. Set MODEL below with its documented metrics, and implement classify() so it lazy-loads
- *      the runtime only when the visitor opens the identification page.
+ * Gemini is a general-purpose vision model, not a validated Sri Lankan snake classifier, so
+ * results are shown as "AI suggestions" with qualitative match strength, never percentages.
  */
-export const MODEL = null
+const ENDPOINT = import.meta.env.VITE_IDENTIFY_ENDPOINT || ''
+
+/** Downscale to ≤1024px JPEG. Re-encoding through canvas also drops EXIF/GPS metadata. */
+function toJpegBase64(img, max = 1024) {
+  const scale = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight))
+  const c = document.createElement('canvas')
+  c.width = Math.round(img.naturalWidth * scale)
+  c.height = Math.round(img.naturalHeight * scale)
+  c.getContext('2d').drawImage(img, 0, 0, c.width, c.height)
+  return c.toDataURL('image/jpeg', 0.85).split(',')[1]
+}
 
 export function useClassifier() {
   return {
-    available: MODEL !== null,
-    async classify() {
-      throw new Error('No validated classification model is configured.')
+    available: !!ENDPOINT,
+    /**
+     * @param {HTMLImageElement} img  loaded preview image
+     * @param {Array} species         library species (id, scientificName, names.en)
+     * @param {string} lang           'en' | 'si' | 'ta'
+     */
+    async classify(img, species, lang) {
+      const ctrl = new AbortController()
+      const timer = setTimeout(() => ctrl.abort(), 45000)
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          signal: ctrl.signal,
+          body: JSON.stringify({
+            image: toJpegBase64(img),
+            mimeType: 'image/jpeg',
+            lang,
+            candidates: species.map((s) => ({ id: s.id, scientificName: s.scientificName, name: s.names.en }))
+          })
+        })
+        const data = await res.json().catch(() => ({}))
+        if (!res.ok) throw new Error(data.error || 'request_failed')
+        return data
+      } finally {
+        clearTimeout(timer)
+      }
     }
   }
 }

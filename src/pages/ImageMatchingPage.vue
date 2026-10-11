@@ -1,6 +1,6 @@
 <script setup>
 import { ref, reactive, computed, onBeforeUnmount, nextTick } from 'vue'
-import { Upload, ImageOff, RotateCcw, LifeBuoy, Lock, Columns3, Cpu } from 'lucide-vue-next'
+import { Upload, ImageOff, RotateCcw, LifeBuoy, Lock, Columns3, Cpu, Sparkles, LoaderCircle } from 'lucide-vue-next'
 import SafetyNotice from '../components/SafetyNotice.vue'
 import SpeciesMedia from '../components/SpeciesMedia.vue'
 import MedicalBadge from '../components/MedicalBadge.vue'
@@ -9,7 +9,7 @@ import { useLanguage } from '../composables/useLanguage.js'
 import { useClassifier, suggestColour } from '../composables/useClassifier.js'
 
 const { t, lang } = useLanguage()
-const { species } = useData()
+const { species, getSpecies } = useData()
 const classifier = useClassifier()
 
 const MAX = 10 * 1024 * 1024
@@ -23,6 +23,8 @@ const step = ref(1)
 const hint = ref(null)
 const imgEl = ref(null)
 const fileInput = ref(null)
+
+const ai = reactive({ state: 'idle', result: null, error: '' })
 
 function choose() { fileInput.value?.click() }
 
@@ -45,11 +47,12 @@ function clearPhoto(resetStep = true) {
   file.value = null
   hint.value = null
   consent.value = false
+  ai.state = 'idle'; ai.result = null; ai.error = ''
   if (resetStep) step.value = 1
 }
 onBeforeUnmount(() => preview.value && URL.revokeObjectURL(preview.value))
 
-async function proceed() {
+async function proceed(useAi = false) {
   consent.value = true
   await nextTick()
   const img = imgEl.value
@@ -58,10 +61,23 @@ async function proceed() {
     hint.value = suggestColour(img)
     if (hint.value && !answers.colour) answers.colour = hint.value
     step.value = 2
+    if (useAi) runAi(img)
   }
   if (img.complete) done()
   else { img.onload = done; img.onerror = () => (error.value = t('identify.errRead')) }
 }
+
+async function runAi(img) {
+  ai.state = 'loading'; ai.result = null; ai.error = ''
+  try {
+    ai.result = await classifier.classify(img, species, lang.value)
+    ai.state = 'done'
+  } catch (e) {
+    ai.state = 'error'
+    ai.error = String(e.message || e)
+  }
+}
+const aiCards = computed(() => (ai.result?.candidates || []).map((c) => ({ ...c, sp: c.id !== 'other' ? getSpecies(c.id) : null })))
 
 function skipPhoto() { clearPhoto(false); step.value = 2 }
 
@@ -113,7 +129,7 @@ const compareIds = computed(() => results.value.list.slice(0, 3).map((x) => x.s.
     <header class="page-head wrap head">
       <div>
         <h1>{{ t('identify.title') }}</h1>
-        <p class="lede">{{ t('identify.lede') }}</p>
+        <p class="lede">{{ classifier.available ? t('identify.ledeAi') : t('identify.lede') }}</p>
       </div>
       <RouterLink to="/safety" class="bitten"><LifeBuoy aria-hidden="true" />{{ t('safety.bitten') }}</RouterLink>
     </header>
@@ -127,7 +143,7 @@ const compareIds = computed(() => results.value.list.slice(0, 3).map((x) => x.s.
 
       <SafetyNotice />
 
-      <p class="model"><Cpu aria-hidden="true" /><span>{{ t('identify.modelNote') }}</span></p>
+      <p class="model"><Cpu aria-hidden="true" /><span>{{ classifier.available ? t('identify.aiNote') : t('identify.modelNote') }}</span></p>
 
       <div class="work">
         <!-- Photo panel -->
@@ -145,17 +161,55 @@ const compareIds = computed(() => results.value.list.slice(0, 3).map((x) => x.s.
               <button class="btn small ghost" @click="choose">{{ t('identify.replace') }}</button>
               <button class="btn small ghost" @click="clearPhoto()"><ImageOff aria-hidden="true" />{{ t('identify.remove') }}</button>
             </div>
-            <div v-if="!consent" class="privacy">
+            <div v-if="!consent && classifier.available" class="privacy">
+              <Lock aria-hidden="true" />
+              <p>{{ t('identify.aiPrivacy') }}</p>
+              <div class="privacy-actions">
+                <button class="btn small" @click="proceed(true)"><Sparkles aria-hidden="true" />{{ t('identify.aiRun') }}</button>
+                <button class="btn small ghost" @click="proceed(false)">{{ t('identify.localOnly') }}</button>
+              </div>
+            </div>
+            <div v-else-if="!consent" class="privacy">
               <Lock aria-hidden="true" />
               <p>{{ t('identify.privacy') }}</p>
-              <button class="btn small" @click="proceed">{{ t('identify.privacyAgree') }}</button>
+              <button class="btn small" @click="proceed(false)">{{ t('identify.privacyAgree') }}</button>
             </div>
           </div>
           <p v-if="error" class="error" role="alert">{{ error }}</p>
         </section>
 
         <!-- Questions -->
-        <section v-if="step >= 2" class="questions" :aria-label="t('identify.step2')">
+        <div v-if="step >= 2" class="right">
+        <section v-if="ai.state !== 'idle'" class="ai" aria-live="polite">
+          <h2 class="ai-title"><Sparkles aria-hidden="true" />{{ t('identify.aiTitle') }}</h2>
+          <p v-if="ai.state === 'loading'" class="loading"><LoaderCircle class="spin" aria-hidden="true" />{{ t('identify.aiLoading') }}</p>
+          <p v-else-if="ai.state === 'error'" class="unclear">{{ ai.error === 'quota_exceeded' || ai.error === 'rate_limited' ? t('identify.aiQuota') : t('identify.aiError') }}</p>
+          <template v-else-if="ai.result">
+            <p v-if="ai.result.is_snake === 'no'" class="unclear">{{ t('identify.aiNotSnake') }}</p>
+            <template v-else>
+              <p v-if="ai.result.is_snake === 'unclear'" class="unclear">{{ t('identify.aiUnclear') }}</p>
+              <p v-if="ai.result.image_quality === 'poor'" class="unclear">{{ t('identify.aiPoor') }}</p>
+              <p v-if="!aiCards.length" class="unclear">{{ t('identify.aiNone') }}</p>
+              <ul class="ai-list">
+                <li v-for="c in aiCards" :key="c.scientific_name" :class="['ai-card', c.match]">
+                  <SpeciesMedia v-if="c.sp" :species="c.sp" sizes="160px" :show-tag="false" :autoplay="false" class="ai-thumb" />
+                  <div>
+                    <p class="ai-match">{{ t('identify.match.' + c.match) }}</p>
+                    <h3 v-if="c.sp"><RouterLink :to="`/species/${c.sp.id}`">{{ name(c.sp) }}</RouterLink></h3>
+                    <h3 v-else class="latin">{{ c.scientific_name }}</h3>
+                    <p class="latin">{{ c.sp ? c.sp.scientificName : t('identify.notInLibrary') }}</p>
+                    <p class="feat">{{ c.visible_features }}</p>
+                  </div>
+                </li>
+              </ul>
+              <p v-if="ai.result.notes" class="feat">{{ ai.result.notes }}</p>
+            </template>
+            <p class="by">{{ t('identify.aiBy', { m: ai.result.model }) }}</p>
+          </template>
+          <SafetyNotice compact />
+        </section>
+        <section class="questions" :aria-label="t('identify.step2')">
+          <h2 v-if="ai.state !== 'idle'" class="ai-title">{{ t('identify.refine') }}</h2>
           <p v-if="hint" class="tnote">{{ t('identify.colourHint', { c: t('identify.a.' + hint) }) }}</p>
           <fieldset v-for="(opts, q) in questions" :key="q">
             <legend>{{ t('identify.q.' + q) }}</legend>
@@ -172,6 +226,7 @@ const compareIds = computed(() => results.value.list.slice(0, 3).map((x) => x.s.
             <button class="btn ghost" @click="restart"><RotateCcw aria-hidden="true" />{{ t('identify.again') }}</button>
           </div>
         </section>
+        </div>
       </div>
 
       <!-- Results -->
@@ -230,6 +285,28 @@ const compareIds = computed(() => results.value.list.slice(0, 3).map((x) => x.s.
 .privacy svg { width: 1.2rem; color: var(--forest); margin-top: .2rem; }
 .privacy p { margin: 0; font-size: var(--step--1); }
 .privacy .btn { grid-column: 2; justify-self: start; margin-top: .6rem; }
+.privacy-actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: .5rem; }
+.privacy-actions .btn { margin-top: .6rem; }
+.right { display: grid; gap: 2rem; }
+.ai { background: var(--paper); border: 1px solid var(--line); padding: 1.25rem; display: grid; gap: .8rem; }
+.ai-title { display: flex; align-items: center; gap: .5rem; font-size: var(--step-2); margin: 0; }
+.ai-title svg { width: .9em; color: var(--leaf); }
+.loading { display: flex; gap: .5rem; align-items: center; margin: 0; }
+.spin { width: 1.2em; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ai-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .8rem; }
+.ai-card { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; align-items: start; border-left: 4px solid var(--sage); padding-left: .8rem; }
+.ai-card.strong { border-color: var(--forest); }
+.ai-card.partial { border-color: var(--leaf); }
+.ai-card .ai-thumb { border: 1px solid var(--line); }
+.ai-card:not(:has(.ai-thumb)) { grid-template-columns: 1fr; }
+.ai-card h3 { margin: 0; font-size: var(--step-1); }
+.ai-card h3 a { text-decoration: none; color: var(--forest-deep); }
+.ai-card p { margin: 0; }
+.ai-match { font-size: .78rem; font-weight: 600; color: var(--bark); }
+.feat { font-size: var(--step--1); color: var(--ink-soft); margin: .25rem 0 0; }
+.by { font-size: .75rem; color: var(--ink-soft); margin: 0; }
+@media (max-width: 520px) { .ai-card { grid-template-columns: 1fr; } }
 .error { color: var(--alert); font-weight: 600; margin-top: .6rem; }
 fieldset { border: 0; border-top: 1px solid var(--line); padding: 1rem 0 .4rem; margin: 0; }
 legend { font-family: var(--serif); font-weight: 800; font-size: var(--step-1); color: var(--forest-deep); padding: 0; margin-bottom: .5rem; float: left; width: 100%; }

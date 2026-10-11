@@ -5,6 +5,7 @@ import myths from '../data/myths.json'
 import articles from '../data/articles.json'
 import sources from '../data/sources.json'
 import imageCredits from '../data/imageCredits.json'
+import folklore from '../data/folklore.json'
 
 const byId = (list) => Object.fromEntries(list.map((x) => [x.id, x]))
 
@@ -27,6 +28,7 @@ export function useData() {
     articles,
     sources,
     imageCredits,
+    folklore,
     getSpecies: (id) => speciesById[id],
     getHabitat: (id) => habitatById[id],
     getSource: (id) => sourceById[id],
@@ -35,6 +37,13 @@ export function useData() {
     getLocomotion: (id) => locomotionById[id],
     speciesInHabitat: (hid) => speciesSorted.filter((s) => s.habitats.includes(hid))
   }
+}
+
+/** Photos with the primary one first */
+export function orderedImages(species) {
+  const imgs = species?.images ?? []
+  const i = imgs.findIndex((x) => x.primary)
+  return i > 0 ? [imgs[i], ...imgs.slice(0, i), ...imgs.slice(i + 1)] : imgs
 }
 
 /** Build responsive image attributes for a bundled photo */

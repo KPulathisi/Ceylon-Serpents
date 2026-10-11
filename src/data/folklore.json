@@ -1,0 +1,75 @@
+[
+  {
+    "id": "mucalinda",
+    "kind": "legend",
+    "tradition": "Buddhist",
+    "species": ["indian-cobra"],
+    "title": { "en": "The naga king who sheltered the Buddha", "si": "බුදුන් වහන්සේට සෙවන දුන් මුචලින්ද නාරජ", "ta": "புத்தருக்கு நிழல் தந்த முசலிந்த நாகராஜன்" },
+    "story": "Soon after his enlightenment, the Buddha sat in meditation beneath a tree when an unseasonal storm rolled in, bringing seven days of cold wind and rain. The naga king Mucalinda rose from his lake, wrapped his coils seven times around the Buddha and spread his great hood above his head like an umbrella. When the skies cleared, Mucalinda took the form of a young man and bowed. Images of the Buddha seated on coiled serpents beneath a many-headed hood, seen in temples across Sri Lanka, recall this story.",
+    "note": "A Buddhist scriptural story about a mythical naga, not a description of real cobra behaviour.",
+    "refs": [{ "title": "Udāna 2.1, Mucalinda Sutta", "url": "https://suttacentral.net/ud2.1" }]
+  },
+  {
+    "id": "nagadipa",
+    "kind": "legend",
+    "tradition": "Buddhist (Mahāvaṃsa)",
+    "species": [],
+    "title": { "en": "Two naga kings and the jewelled throne", "si": "නාග රජුන් දෙදෙනා සහ මැණික් පුටුව", "ta": "இரு நாக அரசர்களும் இரத்தின அரியணையும்" },
+    "story": "According to the Mahāvaṃsa, Sri Lanka's ancient chronicle, two naga kings, Mahodara and his nephew Cūlodara, were on the brink of war at Nāgadīpa over a gem-studded throne. The Buddha came to the island, preached to both sides about the futility of conflict, and the kings made peace. They offered the throne to the Buddha, who returned it to them, and they enshrined it in a stupa. The story is linked to the Nāgadīpa Vihāra on Nainativu in the Jaffna islands.",
+    "note": "Here the 'Nagas' are a legendary people of early Lanka, often described as serpent-worshipping, rather than literal snakes.",
+    "refs": [
+      { "title": "Where two Naga Kings battled it out (Daily FT)", "url": "https://ft.lk/article/496233/ft" },
+      { "title": "Historic Nagadeepa Viharaya at Nainativu (Amazing Lanka)", "url": "https://amazinglanka.com/wp/nagadeepa/" }
+    ]
+  },
+  {
+    "id": "kelaniya",
+    "kind": "legend",
+    "tradition": "Buddhist (Mahāvaṃsa)",
+    "species": [],
+    "title": { "en": "The naga king of Kelaniya", "si": "කැලණියේ මණිඅක්ඛික නාරජ", "ta": "களனியின் நாக அரசன்" },
+    "story": "The Mahāvaṃsa says that Maṇiakkhika, a naga king of Kelaniya and uncle of Cūlodara, was present at the peacemaking on Nāgadīpa and invited the Buddha to visit his own kingdom. Some years later the Buddha came to Kelaniya, the visit remembered at the Kelaniya Raja Maha Vihara near Colombo.",
+    "note": "A chronicle tradition. The nagas are a legendary people, not snakes.",
+    "refs": [{ "title": "Kelaniya Raja Maha Vihara (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kelaniya_Raja_Maha_Vihara" }]
+  },
+  {
+    "id": "muragala",
+    "kind": "tradition",
+    "tradition": "Sinhala Buddhist architecture",
+    "species": ["indian-cobra"],
+    "title": { "en": "Guardians at the temple steps", "si": "විහාර පඩිපෙළ අසල මුරගල්", "ta": "கோயில் படிகளில் காவல் கற்கள்" },
+    "story": "At the entrances of ancient buildings in Anuradhapura and elsewhere stand carved guardstones (muragala). Many show a naga king: a human figure crowned with a cobra's hood, holding a vase of plenty and a flowering branch. The cobra here is a protector, watching over the threshold and everyone who climbs the steps.",
+    "note": "An artistic and religious tradition rather than a claim about snakes.",
+    "refs": [{ "title": "Guardstone (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Guardstone" }]
+  },
+  {
+    "id": "nainativu",
+    "kind": "tradition",
+    "tradition": "Tamil Hindu",
+    "species": ["indian-cobra"],
+    "title": { "en": "The serpent goddess of Nainativu", "si": "නයිනතිව් නාගපූෂනී අම්මන්", "ta": "நயினாதீவு நாகபூசணி அம்மன்" },
+    "story": "On the small island of Nainativu, the Nagapooshani Amman Temple honours a serpent goddess, and reverence for cobras runs deep in its traditions. Each year the temple festival draws pilgrims from across the north. Like the Buddhist Nāgadīpa shrine on the same island, it shows how the naga has long been a shared, protective figure in Sri Lanka.",
+    "note": "Cultural and religious practice, described respectfully. It is not a zoological claim.",
+    "refs": [{ "title": "Nainativu Nagapooshani Amman Temple (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nainativu_Nagapooshani_Amman_Temple" }]
+  },
+  {
+    "id": "eye-plucker-name",
+    "kind": "belief",
+    "tradition": "Sinhala folk belief",
+    "species": ["green-vine-snake"],
+    "title": { "en": "How a village nickname became a scientific name", "si": "ගැමි නමක් විද්‍යාත්මක නාමයක් වූ හැටි", "ta": "ஒரு கிராமப் பெயர் அறிவியல் பெயரான கதை" },
+    "story": "Generations of Sri Lankans have warned children about ඇහැටුල්ලා, the slender green snake said to dart at people's eyes. The name is usually explained as 'eye-plucker'. When European naturalists described the genus in the early 1800s, they borrowed the Sinhala name, and today scientists everywhere call these snakes Ahaetulla. The belief itself has no support: vine snakes hunt lizards and frogs, and their pointed heads simply rest at face height in garden shrubs.",
+    "note": "The belief is documented folklore. The biology is covered on the species page.",
+    "refs": [{ "title": "Ahaetulla nasuta (The Reptile Database)", "url": "https://reptile-database.reptarium.cz/species?genus=Ahaetulla&species=nasuta" }]
+  },
+  {
+    "id": "rat-snake-marriage",
+    "kind": "belief",
+    "tradition": "Rural belief in Sri Lanka and South India",
+    "species": ["rat-snake", "indian-cobra"],
+    "title": { "en": "The rat snake who 'married' a cobra", "si": "නාගයා 'විවාහ කරගත්' ගැරඬියා", "ta": "நல்ல பாம்பை 'மணந்த' சாரைப் பாம்பு" },
+    "story": "In many villages people say the rat snake is the cobra's husband, and that seeing the two together means a wedding in the snake world. What people usually see is two male rat snakes rearing up and twisting around each other in a 'combat dance' to win territory or a mate. The two species are not related closely enough to pair, and the dancers are usually both male.",
+    "note": "A popular belief, with the science explained in Myths and facts.",
+    "refs": [{ "title": "Ptyas mucosa (The Reptile Database)", "url": "https://reptile-database.reptarium.cz/species?genus=Ptyas&species=mucosa" }]
+  }
+]
