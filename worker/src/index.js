@@ -70,8 +70,8 @@ export default {
 
     if (request.method === 'OPTIONS') return new Response(null, { status: originOk ? 204 : 403, headers: cors })
     if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405, cors)
-    if (!originOk) return json({ error: 'origin_not_allowed' }, 403, cors)
-    if (!env.GEMINI_API_KEY) return json({ error: 'not_configured' }, 500, cors)
+    if (!originOk) { console.log('Blocked origin:', origin || '(none)'); return json({ error: 'origin_not_allowed' }, 403, cors) }
+    if (!env.GEMINI_API_KEY) { console.log('GEMINI_API_KEY secret is missing'); return json({ error: 'not_configured' }, 500, cors) }
 
     if (env.RATE_LIMITER) {
       const key = request.headers.get('CF-Connecting-IP') || 'anon'
@@ -104,6 +104,8 @@ export default {
       return json({ error: 'upstream_unreachable' }, 502, cors)
     }
     if (!res.ok) {
+      // Visible with `npx wrangler tail`; never includes the key
+      console.log('Gemini error', res.status, (await res.text().catch(() => '')).slice(0, 500))
       const status = res.status === 429 ? 429 : 502
       return json({ error: res.status === 429 ? 'quota_exceeded' : 'upstream_error' }, status, cors)
     }
