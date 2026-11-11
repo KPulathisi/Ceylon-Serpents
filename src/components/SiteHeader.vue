@@ -20,6 +20,7 @@ const links = [
   { to: '/library', key: 'library' },
   { to: '/habitats', key: 'habitats' },
   { to: '/knowledge', key: 'knowledge' },
+  { to: '/play', key: 'play' },
   { to: '/sources', key: 'sources' }
 ]
 const isActive = (l) => (l.exact ? route.path === '/' : route.path.startsWith(l.to))
@@ -84,7 +85,7 @@ const isActive = (l) => (l.exact ? route.path === '/' : route.path.startsWith(l.
 @media (max-width: 1000px) and (min-width: 761px) {
   .long .nav ul { mask-image: linear-gradient(90deg, #000 90%, transparent); padding-right: 2rem; }
 }
-@media (max-width: 1180px) {
+@media (max-width: 1400px) {
   .bar { grid-template-columns: auto 1fr; grid-template-areas: 'brand tools' 'nav nav'; }
   .nav ul { padding: .1rem 0 .55rem; margin-left: -.6rem; }
 }

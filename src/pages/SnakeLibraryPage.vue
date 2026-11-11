@@ -5,10 +5,12 @@ import { Search, LayoutGrid, List, Columns3, X } from 'lucide-vue-next'
 import SpeciesCard from '../components/SpeciesCard.vue'
 import { useData } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo } from '../composables/useSeo.js'
 import { useSpeciesSearch } from '../composables/useSpeciesSearch.js'
 import { useLocalCollection } from '../composables/useLocalCollection.js'
 
 const { t, l } = useLanguage()
+useSeo('library')
 const { species, habitats } = useData()
 const { state, results, active, reset } = useSpeciesSearch(species)
 const { compare, setCompare } = useLocalCollection()

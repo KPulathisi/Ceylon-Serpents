@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 import { loadData, saveData, listFiles } from './api.js'
 
-const FILES = ['species', 'habitats', 'behavior', 'myths', 'articles', 'sources', 'imageCredits', 'folklore']
+const FILES = ['species', 'habitats', 'behavior', 'myths', 'articles', 'sources', 'imageCredits', 'folklore', 'seo']
 
 export const store = reactive({ loaded: false, error: '', images: [], videos: [], ...Object.fromEntries(FILES.map((f) => [f, null])) })
 

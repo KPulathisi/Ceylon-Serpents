@@ -8,7 +8,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const DATA_FILES = new Set(['species', 'habitats', 'behavior', 'myths', 'articles', 'sources', 'imageCredits', 'folklore'])
+const DATA_FILES = new Set(['species', 'habitats', 'behavior', 'myths', 'articles', 'sources', 'imageCredits', 'folklore', 'seo'])
 const UPLOAD_DIRS = { images: ['.webp', '.jpg', '.jpeg', '.png'], videos: ['.mp4', '.webm'] }
 const MAX_BODY = 160 * 1024 * 1024
 
@@ -105,7 +105,7 @@ export default function adminPlugin() {
       })
 
       server.httpServer?.once('listening', () => {
-        setTimeout(() => server.config.logger.info('\n  Admin panel: http://localhost:' + (server.config.server.port || 5173) + '/#/admin\n'), 200)
+        setTimeout(() => server.config.logger.info('\n  Admin panel: http://localhost:' + (server.config.server.port || 5173) + '/admin\n'), 200)
       })
     }
   }

@@ -15,9 +15,10 @@ The site is a **source of knowledge first**. Photo identification is a clearly l
 3. [Admin panel](#admin-panel)
 4. [AI identification setup (Gemini + Cloudflare Worker)](#ai-identification-setup)
 5. [Deploying to GitHub Pages](#deploying-to-github-pages)
-6. [Logo, photos and videos](#logo-photos-and-videos)
-7. [Project structure](#project-structure)
-8. [Content review and limitations](#content-review-and-limitations)
+6. [Getting into Google search (SEO)](#getting-into-google-search-seo)
+7. [Logo, photos and videos](#logo-photos-and-videos)
+8. [Project structure](#project-structure)
+9. [Content review and limitations](#content-review-and-limitations)
 
 ---
 
@@ -31,8 +32,9 @@ The site is a **source of knowledge first**. Photo identification is a clearly l
 | **Identify a snake** | Optional **AI suggestions from Gemini** (sent only with the visitor's consent, resized and stripped of location data), plus a question-based guide that works with no network at all. Never shows percentages or "safe/dangerous" verdicts |
 | **Knowledge corner** | Behaviour; movement (videos, or animated diagrams until videos are added); **folklore and stories** with sources; myths vs facts; articles |
 | **Habitats** | Island map with generalised zones and seven habitat types |
+| **Snakes & ladders** | A 1–4 player game (people and/or computer players) at `/play`. Every snake is a real species from the library with a quiz question, and every ladder is a snake-safety habit. A correct answer halves the slide. A field notebook records the species and habits each device has met |
 | **Snakebite safety** | Image-free, fast, trilingual first aid plus the 1990 ambulance number |
-| **Admin (local only)** | Manage species, photos, folklore, myths, articles, habitats, sources and movement videos |
+| **Admin (local only)** | Manage species, photos, folklore, myths, articles, habitats, sources, movement videos and **SEO settings** (titles, descriptions, Google verification, with guidelines and a live Google preview) |
 
 Accessibility: semantic HTML, keyboard navigation, visible focus, alt text, reduced-motion support (slideshows and the hero stop rotating), and medical status shown by icon + text, never colour alone.
 
@@ -43,9 +45,9 @@ You need Node.js 20 or newer.
 ```bash
 npm install
 npm run dev       # site:  http://localhost:5173
-                  # admin: http://localhost:5173/#/admin
-npm run build     # production build in dist/
-npm run preview   # serve the production build
+                  # admin: http://localhost:5173/admin
+npm run build     # production build in dist/ (every page pre-rendered to HTML)
+npm run preview   # serve the production build at http://localhost:4173/Ceylon-Serpents/
 ```
 
 ## Admin panel
@@ -58,7 +60,7 @@ The admin panel is how you manage content. It exists **only while `npm run dev` 
 
 ### Workflow
 
-1. Run `npm run dev` and open `http://localhost:5173/#/admin`.
+1. Run `npm run dev` and open `http://localhost:5173/admin`.
 2. Make your changes. Each section has **Save**, and a backup of the previous file is kept in `.admin-backups/` (git-ignored).
 3. Check the site at `http://localhost:5173`.
 4. Publish:
@@ -136,7 +138,27 @@ If `VITE_IDENTIFY_ENDPOINT` isn't set, the site simply hides the AI option and u
 2. Add the `VITE_IDENTIFY_ENDPOINT` secret (see above).
 3. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds and publishes the site to `https://kpulathisi.github.io/Ceylon-Serpents/`.
 
-The site uses relative paths and hash routing, so it also works on Cloudflare Pages or Vercel (build `npm run build`, output `dist`).
+The site uses clean URLs (`/species/indian-cobra`) and pre-renders every page into its own `index.html`, so no server rewrites are needed. The build path comes from **Live site address** in the admin's SEO settings (`src/data/seo.json`). To host it elsewhere, such as a custom domain, Cloudflare Pages or Vercel, change that address first (build `npm run build`, output `dist`).
+
+Old links that used the `#/` style (for example `…/#/species/indian-cobra`) are redirected to the new addresses automatically.
+
+## Getting into Google search (SEO)
+
+Being online doesn't put a site on Google by itself. Google has to find it, be able to read it, and trust that it's useful. This project handles the technical part automatically:
+
+- Every page is pre-rendered to real HTML at build time (`vite-ssg`), so Google can read the text without running JavaScript.
+- Each page gets its own title, description, canonical link, social-card tags and structured data (breadcrumbs, article).
+- `sitemap.xml` and `robots.txt` are generated on every build.
+
+What you do (once):
+
+1. Open the admin → **SEO & Google** → **Google Search Console** tab and follow the steps. In short: add a **URL prefix** property for `https://kpulathisi.github.io/Ceylon-Serpents/`, choose the **HTML tag** method, paste the tag into the admin's *Google verification code* field, save, commit, push, then click *Verify*.
+2. Submit `https://kpulathisi.github.io/Ceylon-Serpents/sitemap.xml` under *Sitemaps*.
+3. Use *URL inspection → Request indexing* for the home, library, safety and play pages.
+
+After that, edit titles and descriptions in the admin's SEO section. Its **SEO check** flags missing or badly sized text, duplicate titles and photos without alt text. After a few weeks, use Search Console's *Performance* report to see what people actually search for.
+
+Ranking also depends on content and links: complete species profiles, alt text on every photo, and links to the site from schools, wildlife groups and social posts all help.
 
 ## Logo, photos and videos
 
@@ -155,12 +177,16 @@ worker/                      Cloudflare Worker for Gemini (deployed separately)
 docs/VIDEO_PROMPTS.md        prompts for the four movement videos
 src/
   admin/                     admin UI (only bundled in dev)
-  data/                      species, folklore, myths, articles, habitats, behavior, sources, imageCredits
+  data/                      species, folklore, myths, articles, habitats, behavior, sources, imageCredits,
+                             seo (SEO settings), game (snakes & ladders squares, quiz questions, habits)
   locales/                   en.json, si.json, ta.json
   components/                SpeciesMedia (slideshow), SpeciesPlate, LocomotionMedia, FolkloreStory, …
   pages/                     Home, SnakeLibrary, SpeciesDetail, Compare, ImageMatching, HabitatExplorer,
-                             KnowledgeCorner, Article, EmergencyInformation, Sources
-  composables/               useLanguage, useSpeciesSearch, useLocalCollection (compare), useData, useClassifier
+                             KnowledgeCorner, Article, SnakesLadders, EmergencyInformation, Sources, NotFound
+  components/game/           GameBoard (SVG board drawn in each species' plate colours)
+  seo/meta.js                builds titles/descriptions from seo.json (shared by the site and the admin preview)
+  composables/               useLanguage, useSpeciesSearch, useLocalCollection (compare), useData, useClassifier,
+                             useSeo (per-page head tags), useSnakesLadders (game rules and saved progress)
 public/images, public/videos
 ```
 

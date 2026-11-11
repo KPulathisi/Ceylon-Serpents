@@ -1,9 +1,10 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { Bug, BookOpen, Sparkles, HelpCircle, Map, Link2, Film, ArrowLeft } from 'lucide-vue-next'
+import { Bug, BookOpen, Sparkles, HelpCircle, Map, Link2, Film, ArrowLeft, Search } from 'lucide-vue-next'
 import SpeciesEditor from './SpeciesEditor.vue'
 import CollectionEditor from './CollectionEditor.vue'
 import MovementEditor from './MovementEditor.vue'
+import SeoEditor from './SeoEditor.vue'
 import { store, loadAll } from './store.js'
 
 const props = defineProps({ section: { type: String, default: 'species' }, id: { type: String, default: '' } })
@@ -19,7 +20,8 @@ const nav = [
   { key: 'articles', label: 'Articles', icon: BookOpen },
   { key: 'habitats', label: 'Habitats', icon: Map },
   { key: 'movement', label: 'Movement videos', icon: Film },
-  { key: 'sources', label: 'Sources', icon: Link2 }
+  { key: 'sources', label: 'Sources', icon: Link2 },
+  { key: 'seo', label: 'SEO & Google', icon: Search }
 ]
 
 const warn = (e) => { if (dirty.value) { e.preventDefault(); e.returnValue = '' } }
@@ -34,7 +36,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warn))
       <nav>
         <RouterLink v-for="n in nav" :key="n.key" :to="`/admin/${n.key}`" :class="{ on: (section || 'species') === n.key }"><component :is="n.icon" />{{ n.label }}</RouterLink>
       </nav>
-      <a href="#/" class="back"><ArrowLeft />View site</a>
+      <RouterLink to="/" class="back"><ArrowLeft />View site</RouterLink>
     </header>
 
     <main class="body">
@@ -43,6 +45,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', warn))
       <template v-else>
         <SpeciesEditor v-if="(section || 'species') === 'species'" :id="id" @toast="showToast" @dirty="dirty = $event" />
         <MovementEditor v-else-if="section === 'movement'" @toast="showToast" />
+        <SeoEditor v-else-if="section === 'seo'" @toast="showToast" @dirty="dirty = $event" />
         <CollectionEditor v-else :key="section" :section="section" :id="id" @toast="showToast" @dirty="dirty = $event" />
       </template>
       <section class="help">

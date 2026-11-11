@@ -5,6 +5,7 @@ import HabitatMap from '../components/HabitatMap.vue'
 import SpeciesCard from '../components/SpeciesCard.vue'
 import { useData, imageSet } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo, breadcrumbs } from '../composables/useSeo.js'
 
 const props = defineProps({ id: { type: String, default: '' } })
 const router = useRouter()
@@ -16,6 +17,10 @@ const list = computed(() => speciesInHabitat(current.value.id))
 const desc = computed(() => current.value[lang.value] || current.value.en)
 const img = computed(() => (current.value.image ? imageSet(current.value.image) : null))
 const select = (id) => router.replace(`/habitats/${id}`)
+
+useSeo(() => props.id && getHabitat(props.id)
+  ? { kind: 'habitat', item: current.value, jsonLd: () => breadcrumbs([['Home', '/'], ['Habitats', '/habitats'], [current.value.name.en, `/habitats/${current.value.id}`]]) }
+  : { kind: 'page', item: 'habitats' })
 </script>
 
 <template>

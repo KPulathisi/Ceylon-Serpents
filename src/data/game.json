@@ -1,0 +1,480 @@
+{
+  "snakes": [
+    {
+      "id": "leaf-litter",
+      "species": "hump-nosed-viper",
+      "head": 25,
+      "tail": 5,
+      "risk": {
+        "en": "You cleared fallen leaves in the garden with bare hands.",
+        "si": "ඔබ ගෙවත්තේ වැටී ඇති කොළ හිස් අතින් ඉවත් කළා.",
+        "ta": "தோட்டத்தில் உதிர்ந்த இலைகளை வெறுங்கையால் அகற்றினீர்கள்."
+      },
+      "question": {
+        "en": "Why is the {name} so often touched by accident?",
+        "si": "{name} බොහෝ විට නොදැනුවත්වම ස්පර්ශ වන්නේ ඇයි?",
+        "ta": "{name} ஏன் அடிக்கடி தவறுதலாகத் தொடப்படுகிறது?"
+      },
+      "options": [
+        {
+          "en": "It stays still and blends in with fallen leaves",
+          "si": "එය නොසෙල්වී සිටින අතර වැටුණු කොළ අතර හොඳින් සැඟවේ",
+          "ta": "அது அசையாமல் இருந்து உதிர்ந்த இலைகளுடன் ஒன்றிவிடுகிறது"
+        },
+        {
+          "en": "It chases people who come near",
+          "si": "ළං වන මිනිසුන් පසුපස එළවයි",
+          "ta": "அருகில் வருபவர்களைத் துரத்துகிறது"
+        },
+        {
+          "en": "It only lives in deep forest, far from homes",
+          "si": "එය ජීවත් වන්නේ නිවෙස්වලින් ඈත ඝන වනාන්තරවල පමණි",
+          "ta": "அது வீடுகளிலிருந்து தொலைவில் அடர்ந்த காடுகளில் மட்டுமே வாழ்கிறது"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "en": "Its camouflage is superb, and it often lives in home gardens and plantations. Use a stick or tool, and wear gloves, when clearing leaves.",
+        "si": "එහි සැඟවීමේ හැකියාව ඉතා ඉහළ වන අතර එය බොහෝ විට ගෙවතු සහ වතුවල ජීවත් වේ. කොළ ඉවත් කරන විට කෝටුවක් හෝ මෙවලමක් භාවිත කර අත්වැසුම් පළඳින්න.",
+        "ta": "அதன் உருமறைப்பு மிகச் சிறந்தது; அது பெரும்பாலும் வீட்டுத் தோட்டங்களிலும் பெருந்தோட்டங்களிலும் வாழ்கிறது. இலைகளை அகற்றும்போது குச்சி அல்லது கருவியைப் பயன்படுத்தி, கையுறை அணியுங்கள்."
+      }
+    },
+    {
+      "id": "tea-branch",
+      "species": "green-pit-viper",
+      "head": 32,
+      "tail": 12,
+      "risk": {
+        "en": "You grabbed a branch on a tea estate without looking.",
+        "si": "ඔබ නොබලාම තේ වත්තක අත්තක් අල්ලා ගත්තා.",
+        "ta": "தேயிலைத் தோட்டத்தில் பார்க்காமல் ஒரு கிளையைப் பிடித்தீர்கள்."
+      },
+      "question": {
+        "en": "Where are you most likely to find the {name}?",
+        "si": "{name} හමුවීමට වැඩිම ඉඩක් ඇත්තේ කොහේද?",
+        "ta": "{name} பெரும்பாலும் எங்கே காணப்படும்?"
+      },
+      "options": [
+        {
+          "en": "Buried in sand on a dry beach",
+          "si": "වියළි වෙරළක වැලි යට වැළලී",
+          "ta": "வறண்ட கடற்கரை மணலில் புதைந்து"
+        },
+        {
+          "en": "Resting still on branches in forests and plantations",
+          "si": "වනාන්තර සහ වතුවල අතු මත නොසෙල්වී",
+          "ta": "காடுகளிலும் தோட்டங்களிலும் கிளைகளில் அசையாமல்"
+        },
+        {
+          "en": "Swimming in the open sea",
+          "si": "විවෘත මුහුදේ පිහිනමින්",
+          "ta": "திறந்த கடலில் நீந்தியபடி"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "en": "This viper is found nowhere else on Earth. It waits motionless on branches, so look before you reach into bushes and tea.",
+        "si": "මෙම පොළඟා ලොව වෙන කිසිම තැනක නොමැත. එය අතු මත නොසෙල්වී රැඳී සිටින නිසා පඳුරු හෝ තේ පඳුරු අතරට අත දැමීමට පෙර හොඳින් බලන්න.",
+        "ta": "இந்த விரியன் உலகில் வேறு எங்கும் இல்லை. அது கிளைகளில் அசையாமல் காத்திருக்கும்; எனவே புதர்களிலும் தேயிலைச் செடிகளிலும் கை வைக்கும் முன் பாருங்கள்."
+      }
+    },
+    {
+      "id": "sandy-scrub",
+      "species": "saw-scaled-viper",
+      "head": 54,
+      "tail": 34,
+      "risk": {
+        "en": "You walked barefoot over sandy scrub in the dry zone at night.",
+        "si": "ඔබ රාත්‍රියේ වියළි කලාපයේ වැලි සහිත පඳුරු බිමක පාවහන් නැතිව ඇවිද්දා.",
+        "ta": "இரவில் வறண்ட வலயத்தின் மணல் புதர்நிலத்தில் வெறுங்காலுடன் நடந்தீர்கள்."
+      },
+      "question": {
+        "en": "How does the {name} warn you to keep away?",
+        "si": "{name} ඔබට ඈත් වන ලෙස අනතුරු අඟවන්නේ කෙසේද?",
+        "ta": "{name} விலகிச் செல்லுமாறு எப்படி எச்சரிக்கிறது?"
+      },
+      "options": [
+        {
+          "en": "It spreads a hood",
+          "si": "පෙණය විහිදුවයි",
+          "ta": "படம் எடுக்கிறது"
+        },
+        {
+          "en": "It shakes a rattle on its tail",
+          "si": "වලිගයේ ඇති හඬ නගන කොටසක් සොලවයි",
+          "ta": "வாலில் உள்ள கிலுகிலுப்பையை அசைக்கிறது"
+        },
+        {
+          "en": "It rubs its saw-edged scales together to make a rasping sound",
+          "si": "කියත් දාර වැනි කොරපොතු එකිනෙක අතුල්ලා කර්කශ හඬක් නගයි",
+          "ta": "ரம்பம் போன்ற விளிம்புள்ள செதில்களை உரசி கரகரப்பான ஒலி எழுப்புகிறது"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "en": "It forms C-shaped coils and rasps its scales. It often hides partly buried in sand, so wear footwear and carry a torch at night.",
+        "si": "එය C හැඩයට දඟර ගසා කොරපොතු අතුල්ලයි. බොහෝ විට වැලි තුළ අර්ධව වැළලී සැඟවී සිටින නිසා රාත්‍රියේ පාවහන් පළඳින්න, විදුලි පන්දමක් රැගෙන යන්න.",
+        "ta": "அது C வடிவில் சுருண்டு செதில்களை உரசுகிறது. பெரும்பாலும் மணலில் பாதி புதைந்து மறைந்திருக்கும்; எனவே இரவில் காலணி அணிந்து, டார்ச் எடுத்துச் செல்லுங்கள்."
+      }
+    },
+    {
+      "id": "forest-log",
+      "species": "sri-lankan-krait",
+      "head": 62,
+      "tail": 42,
+      "risk": {
+        "en": "You lifted a log in a wet-zone forest with bare hands.",
+        "si": "ඔබ තෙත් කලාප වනාන්තරයක දැව කඳක් හිස් අතින් ඔසවා ගත්තා.",
+        "ta": "ஈர வலயக் காட்டில் ஒரு மரக்கட்டையை வெறுங்கையால் தூக்கினீர்கள்."
+      },
+      "question": {
+        "en": "Where in the world does the {name} live?",
+        "si": "{name} ලොව ජීවත් වන්නේ කොහේද?",
+        "ta": "{name} உலகில் எங்கே வாழ்கிறது?"
+      },
+      "options": [
+        {
+          "en": "Only in Sri Lanka",
+          "si": "ශ්‍රී ලංකාවේ පමණි",
+          "ta": "இலங்கையில் மட்டும்"
+        },
+        {
+          "en": "All across Asia",
+          "si": "මුළු ආසියාව පුරාම",
+          "ta": "ஆசியா முழுவதும்"
+        },
+        {
+          "en": "Only in Africa",
+          "si": "අප්‍රිකාවේ පමණි",
+          "ta": "ஆப்பிரிக்காவில் மட்டும்"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "en": "It is endemic: found only in Sri Lanka's wet zone. By day it hides under logs and leaf litter, so lift logs with a stick, never your hands.",
+        "si": "එය ආවේණික සර්පයෙකි: ශ්‍රී ලංකාවේ තෙත් කලාපයේ පමණක් හමු වේ. දිවා කාලයේ දැව කඳන් සහ කොළ රොඩු යට සැඟවී සිටින නිසා දැව කඳන් ඔසවන්න කෝටුවක් භාවිත කරන්න, කිසිවිටෙක අතින් නොවේ.",
+        "ta": "இது இலங்கைக்கு மட்டுமே உரியது: இலங்கையின் ஈர வலயத்தில் மட்டுமே காணப்படுகிறது. பகலில் மரக்கட்டைகள், இலைக் குவியல்களின் கீழ் மறைந்திருக்கும்; எனவே கட்டைகளைக் குச்சியால் தூக்குங்கள், கையால் அல்ல."
+      }
+    },
+    {
+      "id": "chase-cobra",
+      "species": "indian-cobra",
+      "head": 64,
+      "tail": 24,
+      "risk": {
+        "en": "You tried to chase a cobra away with a stick.",
+        "si": "ඔබ කෝටුවකින් නාගයෙකු එළවා දැමීමට උත්සාහ කළා.",
+        "ta": "ஒரு நல்ல பாம்பைக் குச்சியால் விரட்ட முயன்றீர்கள்."
+      },
+      "question": {
+        "en": "A cobra raises its hood near you. What should you do?",
+        "si": "නාගයෙකු ඔබ අසල පෙණය පුප්පයි. ඔබ කළ යුත්තේ කුමක්ද?",
+        "ta": "ஒரு நல்ல பாம்பு உங்கள் அருகில் படம் எடுக்கிறது. நீங்கள் என்ன செய்ய வேண்டும்?"
+      },
+      "options": [
+        {
+          "en": "Hit it before it strikes",
+          "si": "එය දෂ්ට කිරීමට පෙර එයට පහර දෙන්න",
+          "ta": "அது கொத்தும் முன் அடியுங்கள்"
+        },
+        {
+          "en": "Play music to calm it down",
+          "si": "එය සන්සුන් කිරීමට සංගීතය වාදනය කරන්න",
+          "ta": "அதை அமைதிப்படுத்த இசை வாசியுங்கள்"
+        },
+        {
+          "en": "Stay calm, step back slowly and give it space",
+          "si": "සන්සුන්ව, සෙමින් පසුපසට ගොස් එයට ඉඩ දෙන්න",
+          "ta": "அமைதியாக, மெதுவாகப் பின்வாங்கி அதற்கு இடம் கொடுங்கள்"
+        }
+      ],
+      "answer": 2,
+      "explain": {
+        "en": "The hood is a warning, not an attack. Cobras usually retreat when given space, and many bites happen when people try to catch or kill them. Snakes can't hear music: a charmer's cobra follows the pipe's movement.",
+        "si": "පෙණය අනතුරු ඇඟවීමකි, ප්‍රහාරයක් නොවේ. ඉඩ දුන් විට නාගයා සාමාන්‍යයෙන් ඉවත්ව යයි. බොහෝ දෂ්ටන සිදු වන්නේ ඔවුන් අල්ලා ගැනීමට හෝ මැරීමට උත්සාහ කරන විටය. සර්පයින්ට සංගීතය ඇසෙන්නේ නැත: අහිකුණ්ඨිකයාගේ නාගයා නළාවේ චලනය අනුගමනය කරයි.",
+        "ta": "படம் ஒரு எச்சரிக்கை, தாக்குதல் அல்ல. இடம் கொடுத்தால் நல்ல பாம்பு பொதுவாக விலகிச் செல்லும். பிடிக்கவோ கொல்லவோ முயலும்போதுதான் பல கடிகள் நிகழ்கின்றன. பாம்புகளுக்கு இசை கேட்காது: பாம்பாட்டியின் பாம்பு மகுடியின் அசைவைப் பின்தொடர்கிறது."
+      }
+    },
+    {
+      "id": "fishing-net",
+      "species": "beaked-sea-snake",
+      "head": 85,
+      "tail": 65,
+      "risk": {
+        "en": "You pulled a sea snake out of a fishing net by hand.",
+        "si": "ඔබ මාළු දැලකින් මුහුදු සර්පයෙකු අතින් ඉවත් කළා.",
+        "ta": "மீன்பிடி வலையிலிருந்து கடல் பாம்பைக் கையால் எடுத்தீர்கள்."
+      },
+      "question": {
+        "en": "When do most bites from the {name} happen?",
+        "si": "{name} දෂ්ටන බොහොමයක් සිදු වන්නේ කවදාද?",
+        "ta": "{name} கடிகள் பெரும்பாலும் எப்போது நிகழ்கின்றன?"
+      },
+      "options": [
+        {
+          "en": "When fishers handle it in their nets",
+          "si": "ධීවරයින් දැල් තුළ එය හසුරුවන විට",
+          "ta": "மீனவர்கள் வலையில் அதைக் கையாளும்போது"
+        },
+        {
+          "en": "When it climbs into coconut trees",
+          "si": "එය පොල් ගස්වලට නගින විට",
+          "ta": "அது தென்னை மரங்களில் ஏறும்போது"
+        },
+        {
+          "en": "When it hunts in paddy fields",
+          "si": "එය කුඹුරුවල දඩයම් කරන විට",
+          "ta": "அது வயல்களில் வேட்டையாடும்போது"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "en": "This sea snake is highly venomous but helpless on land. Use a tool to free it from nets and let it slip back into the water.",
+        "si": "මෙම මුහුදු සර්පයා දැඩි විෂ සහිත නමුත් ගොඩබිමේදී අසරණය. දැලෙන් නිදහස් කිරීමට මෙවලමක් භාවිත කර එය නැවත ජලයට යාමට ඉඩ දෙන්න.",
+        "ta": "இந்தக் கடல் பாம்பு கடும் நஞ்சுடையது, ஆனால் நிலத்தில் உதவியற்றது. வலையிலிருந்து விடுவிக்க ஒரு கருவியைப் பயன்படுத்தி, அதை மீண்டும் நீருக்குள் நழுவ விடுங்கள்."
+      }
+    },
+    {
+      "id": "harvest-night",
+      "species": "russells-viper",
+      "head": 90,
+      "tail": 50,
+      "risk": {
+        "en": "You walked through a paddy field at harvest time, at night, without a torch.",
+        "si": "ඔබ අස්වනු කාලයේ රාත්‍රියේ විදුලි පන්දමක් නැතිව කුඹුරක් හරහා ඇවිද්දා.",
+        "ta": "அறுவடைக் காலத்தில் இரவில் டார்ச் இல்லாமல் வயல் வழியே நடந்தீர்கள்."
+      },
+      "question": {
+        "en": "Why does the {name} come into paddy fields?",
+        "si": "{name} කුඹුරුවලට එන්නේ ඇයි?",
+        "ta": "{name} ஏன் வயல்களுக்கு வருகிறது?"
+      },
+      "options": [
+        {
+          "en": "To eat the rice",
+          "si": "වී කෑමට",
+          "ta": "நெல்லைச் சாப்பிட"
+        },
+        {
+          "en": "To hunt the rats and mice there",
+          "si": "එහි සිටින මීයන් දඩයම් කිරීමට",
+          "ta": "அங்குள்ள எலிகளை வேட்டையாட"
+        },
+        {
+          "en": "To lay eggs in the mud",
+          "si": "මඩේ බිත්තර දැමීමට",
+          "ta": "சேற்றில் முட்டையிட"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "en": "Rodents gather at harvest time, and Russell's vipers follow them. It is one of the snakes behind many serious bites in Sri Lanka, so boots and a torch matter most in the fields.",
+        "si": "අස්වනු කාලයේ මීයන් රැස් වන අතර තිත් පොළඟා ඔවුන් පසුපස එයි. ශ්‍රී ලංකාවේ බරපතල සර්ප දෂ්ටන රැසකට හේතු වන සර්පයින්ගෙන් එකක් බැවින් කුඹුරේදී බූට් සපත්තු සහ විදුලි පන්දමක් ඉතා වැදගත්.",
+        "ta": "அறுவடைக் காலத்தில் எலிகள் கூடுகின்றன, கண்ணாடி விரியன் அவற்றைப் பின்தொடர்கிறது. இலங்கையில் பல கடுமையான கடிகளுக்குக் காரணமான பாம்புகளில் இதுவும் ஒன்று; எனவே வயலில் பூட்ஸும் டார்ச்சும் மிக முக்கியம்."
+      }
+    },
+    {
+      "id": "killed-rat-snake",
+      "species": "rat-snake",
+      "head": 95,
+      "tail": 75,
+      "risk": {
+        "en": "You killed a rat snake, thinking it was dangerous.",
+        "si": "ඔබ ගැරඬියෙකු අනතුරුදායක යැයි සිතා මරා දැමුවා.",
+        "ta": "சாரைப் பாம்பை ஆபத்தானது என்று நினைத்துக் கொன்றீர்கள்."
+      },
+      "question": {
+        "en": "Is the {name} venomous?",
+        "si": "{name} විෂ සහිතද?",
+        "ta": "{name} நஞ்சுள்ளதா?"
+      },
+      "options": [
+        {
+          "en": "Yes, it is a male cobra",
+          "si": "ඔව්, එය පිරිමි නාගයෙකි",
+          "ta": "ஆம், அது ஆண் நல்ல பாம்பு"
+        },
+        {
+          "en": "No, it is harmless and eats rats",
+          "si": "නැත, එය හානිකර නොවන අතර මීයන් කයි",
+          "ta": "இல்லை, அது தீங்கற்றது, எலிகளைத் தின்னும்"
+        },
+        {
+          "en": "Only after sunset",
+          "si": "හිරු බැස ගිය පසු පමණි",
+          "ta": "சூரியன் மறைந்த பின் மட்டும்"
+        }
+      ],
+      "answer": 1,
+      "explain": {
+        "en": "Rat snakes are not venomous, and they are not male cobras: the two belong to different families. Killing one means more rats, and rats attract venomous snakes.",
+        "si": "ගැරඬියා විෂ සහිත නොවන අතර පිරිමි නාගයෙකුද නොවේ: ඔවුන් වෙනස් කුලවලට අයත් වේ. එකෙකු මැරීමෙන් මීයන් වැඩි වන අතර මීයන් විෂ සර්පයින් ආකර්ෂණය කරයි.",
+        "ta": "சாரைப் பாம்பு நஞ்சற்றது; அது ஆண் நல்ல பாம்பும் அல்ல: இரண்டும் வெவ்வேறு குடும்பங்களைச் சேர்ந்தவை. ஒன்றைக் கொன்றால் எலிகள் பெருகும், எலிகள் நச்சுப் பாம்புகளை ஈர்க்கும்."
+      }
+    },
+    {
+      "id": "floor-sleep",
+      "species": "common-krait",
+      "head": 98,
+      "tail": 79,
+      "risk": {
+        "en": "You slept on the floor without a mosquito net.",
+        "si": "ඔබ මදුරු දැලක් නැතිව බිම නිදා ගත්තා.",
+        "ta": "கொசுவலை இல்லாமல் தரையில் தூங்கினீர்கள்."
+      },
+      "question": {
+        "en": "Why is sleeping on the floor risky where the {name} lives?",
+        "si": "{name} ජීවත් වන ප්‍රදේශවල බිම නිදා ගැනීම අවදානම් වන්නේ ඇයි?",
+        "ta": "{name} வாழும் இடங்களில் தரையில் தூங்குவது ஏன் ஆபத்தானது?"
+      },
+      "options": [
+        {
+          "en": "Kraits hunt at night, and their bite can be almost painless",
+          "si": "කරවලා රාත්‍රියේ දඩයම් කරන අතර ඔවුන්ගේ දෂ්ටනය බොහෝ විට වේදනා රහිත විය හැක",
+          "ta": "கட்டு விரியன் இரவில் வேட்டையாடும், அதன் கடி கிட்டத்தட்ட வலியற்றதாக இருக்கலாம்"
+        },
+        {
+          "en": "Kraits are only active at midday",
+          "si": "කරවලා ක්‍රියාශීලී වන්නේ මධ්‍යාහ්නයේ පමණි",
+          "ta": "கட்டு விரியன் நண்பகலில் மட்டுமே சுறுசுறுப்பாக இருக்கும்"
+        },
+        {
+          "en": "Kraits are attracted to the smell of rice",
+          "si": "කරවලා බත් සුවඳට ආකර්ෂණය වේ",
+          "ta": "கட்டு விரியன் சோற்றின் வாசனையால் ஈர்க்கப்படும்"
+        }
+      ],
+      "answer": 0,
+      "explain": {
+        "en": "Kraits enter homes at night, and a sleeping person may not wake when bitten. Sleep on a raised bed under a tucked-in net, and go to hospital at once after any suspected bite.",
+        "si": "කරවලා රාත්‍රියේ නිවෙස්වලට ඇතුළු වන අතර නිදාගෙන සිටින කෙනෙකු දෂ්ට කළ විට අවදි නොවිය හැක. මදුරු දැල හොඳින් යටට ගසා උස් ඇඳක නිදා ගන්න; සැක සහිත ඕනෑම දෂ්ටනයකින් පසු වහාම රෝහලට යන්න.",
+        "ta": "கட்டு விரியன் இரவில் வீடுகளுக்குள் நுழையும்; தூங்குபவர் கடிபட்டாலும் விழிக்காமல் போகலாம். உயர்ந்த கட்டிலில், நன்கு செருகிய கொசுவலைக்குள் தூங்குங்கள்; கடி சந்தேகம் ஏற்பட்டால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+      }
+    }
+  ],
+  "ladders": [
+    {
+      "id": "torch",
+      "from": 3,
+      "to": 23,
+      "habit": {
+        "en": "You carried a torch on a night walk.",
+        "si": "ඔබ රාත්‍රී ඇවිදීමකදී විදුලි පන්දමක් රැගෙන ගියා.",
+        "ta": "இரவு நடையின்போது டார்ச் எடுத்துச் சென்றீர்கள்."
+      },
+      "fact": {
+        "en": "Kraits, Russell's vipers and many other medically important snakes are active at night. Light lets you see them, and gives them time to move away.",
+        "si": "කරවලා, තිත් පොළඟා සහ වෛද්‍ය වශයෙන් වැදගත් තවත් බොහෝ සර්පයින් රාත්‍රියේ ක්‍රියාශීලී වේ. ආලෝකය නිසා ඔබට ඔවුන් දැකිය හැකි අතර ඔවුන්ට ඉවත්ව යාමට කාලය ලැබේ.",
+        "ta": "கட்டு விரியன், கண்ணாடி விரியன் உள்ளிட்ட மருத்துவ முக்கியத்துவம் வாய்ந்த பல பாம்புகள் இரவில் சுறுசுறுப்பாக இருக்கும். வெளிச்சம் அவற்றைப் பார்க்க உதவுகிறது, அவை விலகிச் செல்லவும் நேரம் கொடுக்கிறது."
+      }
+    },
+    {
+      "id": "boots",
+      "from": 7,
+      "to": 27,
+      "habit": {
+        "en": "You wore boots to work in the paddy field.",
+        "si": "ඔබ කුඹුරේ වැඩට බූට් සපත්තු පැළඳ ගියා.",
+        "ta": "வயல் வேலைக்கு பூட்ஸ் அணிந்து சென்றீர்கள்."
+      },
+      "fact": {
+        "en": "Most snakebites are on the feet and lower legs. Boots and long trousers are simple, effective protection for farmers.",
+        "si": "බොහෝ සර්ප දෂ්ටන සිදු වන්නේ පාදවලට සහ කකුල්වල පහළ කොටසට ය. බූට් සපත්තු සහ දිගු කලිසම් ගොවීන්ට සරල, ඵලදායී ආරක්ෂාවකි.",
+        "ta": "பெரும்பாலான பாம்புக்கடிகள் பாதங்களிலும் கீழ்க்கால்களிலும் நிகழ்கின்றன. பூட்ஸும் நீண்ட கால்சட்டையும் விவசாயிகளுக்கு எளிய, பயனுள்ள பாதுகாப்பு."
+      }
+    },
+    {
+      "id": "net",
+      "from": 21,
+      "to": 41,
+      "species": "common-krait",
+      "habit": {
+        "en": "You slept on a raised bed under a tucked-in mosquito net.",
+        "si": "ඔබ හොඳින් යටට ගැසූ මදුරු දැලක් යට උස් ඇඳක නිදා ගත්තා.",
+        "ta": "உயர்ந்த கட்டிலில், நன்கு செருகிய கொசுவலைக்குள் தூங்கினீர்கள்."
+      },
+      "fact": {
+        "en": "Kraits hunt at night and sometimes enter houses. Sleeping off the floor under a net is one of the best protections against krait bites.",
+        "si": "කරවලා රාත්‍රියේ දඩයම් කරන අතර සමහර විට නිවෙස්වලට ඇතුළු වේ. මදුරු දැලක් යට බිමින් ඉහළ නිදා ගැනීම කරවල දෂ්ටනවලින් ආරක්ෂා වීමට හොඳම ක්‍රමයකි.",
+        "ta": "கட்டு விரியன்கள் இரவில் வேட்டையாடும், சில சமயம் வீடுகளுக்குள் நுழையும். தரையிலிருந்து உயரத்தில் கொசுவலைக்குள் தூங்குவது கட்டு விரியன் கடியிலிருந்து காக்கும் சிறந்த வழிகளில் ஒன்று."
+      }
+    },
+    {
+      "id": "tidy-yard",
+      "from": 36,
+      "to": 56,
+      "habit": {
+        "en": "You moved the firewood and rubbish away from the house.",
+        "si": "ඔබ දර සහ කුණු නිවසින් ඈතට ඉවත් කළා.",
+        "ta": "விறகையும் குப்பையையும் வீட்டிலிருந்து தள்ளி வைத்தீர்கள்."
+      },
+      "fact": {
+        "en": "Rubbish feeds rats, and rats attract snakes. Short grass and a tidy yard leave snakes less food and fewer places to hide.",
+        "si": "කුණු මීයන්ට ආහාර සපයන අතර මීයන් සර්පයින් ආකර්ෂණය කරයි. කෙටි තණකොළ සහ පිරිසිදු මිදුලක් සර්පයින්ට ආහාර සහ සැඟවෙන තැන් අඩු කරයි.",
+        "ta": "குப்பை எலிகளுக்கு உணவாகிறது, எலிகள் பாம்புகளை ஈர்க்கின்றன. குட்டையான புல்லும் சுத்தமான முற்றமும் பாம்புகளுக்கு உணவையும் மறைவிடங்களையும் குறைக்கின்றன."
+      }
+    },
+    {
+      "id": "give-space",
+      "from": 49,
+      "to": 69,
+      "habit": {
+        "en": "You stood still, then stepped slowly back from a snake.",
+        "si": "ඔබ සර්පයෙකු දුටු විට නොසෙල්වී සිට, පසුව සෙමින් පසුපසට ගියා.",
+        "ta": "பாம்பைக் கண்டதும் அசையாமல் நின்று, பின் மெதுவாகப் பின்வாங்கினீர்கள்."
+      },
+      "fact": {
+        "en": "Most bites happen when people try to catch, kill or move a snake. Given space, a snake will usually leave on its own.",
+        "si": "බොහෝ දෂ්ටන සිදු වන්නේ සර්පයෙකු අල්ලා ගැනීමට, මැරීමට හෝ ඉවත් කිරීමට උත්සාහ කරන විටය. ඉඩ දුන් විට සර්පයා සාමාන්‍යයෙන් තනිවම ඉවත්ව යයි.",
+        "ta": "பெரும்பாலான கடிகள் பாம்பைப் பிடிக்கவோ, கொல்லவோ, அகற்றவோ முயலும்போது நிகழ்கின்றன. இடம் கொடுத்தால், பாம்பு பொதுவாகத் தானாகவே விலகிச் செல்லும்."
+      }
+    },
+    {
+      "id": "look-first",
+      "from": 58,
+      "to": 78,
+      "habit": {
+        "en": "You looked first, and used a stick to move leaves and logs.",
+        "si": "ඔබ පළමුව හොඳින් බලා, කොළ සහ දැව කඳන් ඉවත් කිරීමට කෝටුවක් භාවිත කළා.",
+        "ta": "முதலில் பார்த்து, இலைகளையும் கட்டைகளையும் நகர்த்தக் குச்சியைப் பயன்படுத்தினீர்கள்."
+      },
+      "fact": {
+        "en": "Hump-nosed vipers and kraits shelter in leaf litter and under logs. A stick keeps your hands out of their hiding places.",
+        "si": "පොළොන් තෙලිස්සා සහ කරවලා කොළ රොඩු අතර සහ දැව කඳන් යට සැඟවී සිටී. කෝටුවක් භාවිතයෙන් ඔබේ අත් ඔවුන්ගේ සැඟවුම් තැන්වලින් ඈත් කර තබා ගත හැක.",
+        "ta": "குழி விரியன்களும் கட்டு விரியன்களும் இலைக் குவியல்களிலும் கட்டைகளின் கீழும் மறைந்திருக்கும். குச்சி உங்கள் கைகளை அவற்றின் மறைவிடங்களிலிருந்து விலக்கி வைக்கும்."
+      }
+    },
+    {
+      "id": "rat-snake-friend",
+      "from": 67,
+      "to": 87,
+      "species": "rat-snake",
+      "habit": {
+        "en": "You let a rat snake hunt the rats in your fields.",
+        "si": "ඔබ ගැරඬියෙකුට ඔබේ කෙත්වල මීයන් දඩයම් කිරීමට ඉඩ දුන්නා.",
+        "ta": "உங்கள் வயலில் எலிகளை வேட்டையாட சாரைப் பாம்பை விட்டீர்கள்."
+      },
+      "fact": {
+        "en": "One harmless rat snake eats many rodents, protecting crops and leaving fewer rats to attract venomous snakes.",
+        "si": "හානිකර නොවන එක් ගැරඬියෙකු මීයන් රැසක් කන අතර, එමගින් බෝග ආරක්ෂා වී විෂ සර්පයින් ආකර්ෂණය කරන මීයන් අඩු වේ.",
+        "ta": "தீங்கற்ற ஒரு சாரைப் பாம்பு பல எலிகளைத் தின்று, பயிர்களைக் காக்கிறது; நச்சுப் பாம்புகளை ஈர்க்கும் எலிகளும் குறைகின்றன."
+      }
+    },
+    {
+      "id": "first-aid",
+      "from": 72,
+      "to": 92,
+      "link": "/safety",
+      "habit": {
+        "en": "After a bite, you kept the person still and called 1990.",
+        "si": "දෂ්ටනයකින් පසු ඔබ රෝගියා නොසෙල්වී තබා 1990 ඇමතුවා.",
+        "ta": "கடிக்குப் பின், கடிபட்டவரை அசையாமல் வைத்து 1990-ஐ அழைத்தீர்கள்."
+      },
+      "fact": {
+        "en": "Call 1990 for a free ambulance or go straight to hospital. No tourniquets, cutting or herbal pastes, and never wait for symptoms.",
+        "si": "නොමිලේ ගිලන් රථයක් සඳහා 1990 අමතන්න, නැතහොත් කෙළින්ම රෝහලට යන්න. තද බැඳුම්, කැපීම් හෝ ඖෂධ ආලේපන එපා; රෝග ලක්ෂණ බලාපොරොත්තුවෙන් කිසිවිටෙක රැඳී නොසිටින්න.",
+        "ta": "இலவச ஆம்புலன்ஸுக்கு 1990-ஐ அழையுங்கள் அல்லது நேரே மருத்துவமனைக்குச் செல்லுங்கள். இறுக்கக் கட்டு, வெட்டுதல், மூலிகைப் பூச்சு வேண்டாம்; அறிகுறிகளுக்காக ஒருபோதும் காத்திருக்காதீர்கள்."
+      }
+    }
+  ]
+}

@@ -7,3 +7,5 @@ dist
 worker/node_modules
 worker/.wrangler
 .env.local
+.playwright-mcp
+.vite-ssg-temp

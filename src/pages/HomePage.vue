@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Camera, BookOpen } from 'lucide-vue-next'
+import { ArrowRight, Camera, BookOpen, Dices } from 'lucide-vue-next'
 import SpeciesCard from '../components/SpeciesCard.vue'
 import HabitatMap from '../components/HabitatMap.vue'
 import LocomotionMedia from '../components/LocomotionMedia.vue'
@@ -11,9 +11,14 @@ import SafetyNotice from '../components/SafetyNotice.vue'
 import ContourLines from '../components/ContourLines.vue'
 import { useData, imageSet, orderedImages } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo, seo } from '../composables/useSeo.js'
 
 gsap.registerPlugin(ScrollTrigger)
 const { t, l, lang } = useLanguage()
+useSeo(() => ({
+  kind: 'page', item: 'home',
+  jsonLd: ({ url, meta }) => ({ '@context': 'https://schema.org', '@type': 'WebSite', name: seo.siteName, url, description: meta.description, inLanguage: ['en', 'si', 'ta'] })
+}))
 const { species, getSpecies, habitats, behavior, myths, getArticle } = useData()
 
 // Hero: cycle through every species that has a photo (green pit viper first), using its primary image
@@ -205,6 +210,19 @@ const titleLines = () => {
       </div>
     </section>
 
+    <!-- G2. Snakes & ladders -->
+    <section class="section wrap game-teaser">
+      <div>
+        <p class="kicker">{{ t('game.eyebrow') }}</p>
+        <h2>{{ t('game.homeTitle') }}</h2>
+        <p class="lede">{{ t('game.homeText') }}</p>
+        <RouterLink to="/play" class="btn"><Dices aria-hidden="true" />{{ t('game.homeCta') }}</RouterLink>
+      </div>
+      <ol class="mini-circle" :aria-label="t('game.circleTitle')">
+        <li v-for="(c, i) in t('game.circle')" :key="i"><span>{{ i + 1 }}</span>{{ c.t }}</li>
+      </ol>
+    </section>
+
     <!-- H. Respect and safety -->
     <section class="section wrap respect">
       <div>
@@ -309,6 +327,11 @@ const titleLines = () => {
 .identify-copy h2 { color: var(--paper); }
 .identify-copy p { color: #e2dfcf; }
 
+.game-teaser { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; border-bottom: 1px solid var(--line); }
+.mini-circle { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.mini-circle li { display: flex; gap: .6rem; align-items: center; background: var(--paper); border: 1px solid var(--charcoal); box-shadow: 3px 3px 0 var(--charcoal); padding: .8rem .9rem; font-weight: 600; font-size: var(--step--1); color: var(--forest-deep); }
+.mini-circle span { width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--forest); color: var(--paper); display: grid; place-items: center; flex: none; font-family: var(--serif); font-weight: 800; }
+@media (max-width: 800px) { .game-teaser { grid-template-columns: 1fr; } }
 .respect { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
 @media (max-width: 800px) { .respect { grid-template-columns: 1fr; } }
 

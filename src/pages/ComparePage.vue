@@ -6,11 +6,13 @@ import SpeciesMedia from '../components/SpeciesMedia.vue'
 import MedicalBadge from '../components/MedicalBadge.vue'
 import { useData } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo } from '../composables/useSeo.js'
 import { useLocalCollection } from '../composables/useLocalCollection.js'
 
 const route = useRoute()
 const router = useRouter()
 const { t, l, lang } = useLanguage()
+useSeo(() => ({ kind: 'page', item: 'compare', noindex: true }))
 const { species, getSpecies, getHabitat } = useData()
 const { compare, setCompare } = useLocalCollection()
 

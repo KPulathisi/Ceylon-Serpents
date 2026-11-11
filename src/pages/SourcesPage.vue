@@ -1,7 +1,9 @@
 <script setup>
 import { useData } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo } from '../composables/useSeo.js'
 const { t } = useLanguage()
+useSeo('sources')
 const { sources, imageCredits, species } = useData()
 // Species photos carry their own credit fields; other site images are listed in imageCredits.json
 const credits = [

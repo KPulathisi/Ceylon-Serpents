@@ -2,8 +2,10 @@
 import SiteHeader from './components/SiteHeader.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import { useLanguage } from './composables/useLanguage.js'
+import { useSiteHead } from './composables/useSeo.js'
 import { useRoute } from 'vue-router'
-const { t } = useLanguage()
+const { t, lang } = useLanguage()
+useSiteHead(lang)
 const route = useRoute()
 </script>
 

@@ -10,7 +10,8 @@
     "sources": "About & sources",
     "bite": "Snakebite? Get help",
     "menu": "Menu",
-    "language": "Language"
+    "language": "Language",
+    "play": "Play & learn"
   },
   "common": {
     "skip": "Skip to content",
@@ -312,5 +313,90 @@
     "allRights": "all rights reserved",
     "unknown": "Unknown photographer",
     "via": "Via"
+  },
+  "notFound": {
+    "title": "We couldn't find that page",
+    "lede": "The address may have changed. Try the snake library, or go straight to snakebite first aid."
+  },
+  "game": {
+    "title": "Snakes & ladders",
+    "eyebrow": "Play & learn",
+    "lede": "Race to square 100. Every snake on the board is a real Sri Lankan species, and every ladder is a habit that keeps people and snakes safe.",
+    "respect": "The snakes here aren't villains. You slide down when someone takes a risk that leads to a bite, or harms a snake, and you find out why.",
+    "circleTitle": "The learning circle",
+    "circle": [
+      {
+        "t": "Roll and move",
+        "d": "Take turns rolling the die and race towards square 100."
+      },
+      {
+        "t": "Meet a real species",
+        "d": "Land on a snake's head to meet that species, with its Sinhala and Tamil names."
+      },
+      {
+        "t": "Answer its question",
+        "d": "Get it right and you slide only half the way down."
+      },
+      {
+        "t": "Explore and play again",
+        "d": "Read the full profile, fill your field notebook, and roll again."
+      }
+    ],
+    "setupTitle": "Who's playing?",
+    "players": "Players",
+    "player": "Player {n}",
+    "computer": "Computer {n}",
+    "name": "Name",
+    "human": "Person",
+    "cpu": "Computer",
+    "add": "Add a player",
+    "remove": "Remove {name}",
+    "needHuman": "At least one player must be a person.",
+    "start": "Start game",
+    "resume": "Resume your saved game",
+    "newGame": "New game",
+    "turn": "{name}'s turn",
+    "roll": "Roll the die",
+    "rolling": "Rolling…",
+    "thinking": "{name} is rolling…",
+    "rolled": "{name} rolled {n} and moved to square {to}.",
+    "exact": "{name} rolled {n} but needs exactly {need} to reach 100.",
+    "start0": "Start",
+    "square": "Square {n}",
+    "snakeTitle": "A snake! Square {n}",
+    "riskLabel": "What happened",
+    "quizLabel": "Quick question",
+    "correct": "Correct! Because you knew this, you slide only to square {to} instead of {full}.",
+    "wrong": "Not quite. You slide down to square {to}.",
+    "cpuChose": "{name} chose:",
+    "slid": "{name} slid down to square {to}.",
+    "ladderTitle": "A ladder! Square {n}",
+    "habitLabel": "Good habit",
+    "whyLabel": "Why it works",
+    "climb": "Climb to square {to}",
+    "climbed": "{name} climbed to square {to}.",
+    "continue": "Continue",
+    "profile": "Read the full profile",
+    "safety": "Read snakebite first aid",
+    "newTab": "opens in a new tab",
+    "notebook": "Field notebook",
+    "notebookLede": "Everything you've met, across all your games on this device.",
+    "metSnakes": "Snakes met: {n} of {t}",
+    "metHabits": "Habits learnt: {n} of {t}",
+    "notebookEmpty": "Land on a snake or a ladder to start filling your notebook.",
+    "clearNotebook": "Clear notebook",
+    "won": "{name} reached square 100!",
+    "wonLede": "Here's what came up in this game.",
+    "score": "Quiz answers: {c} of {a} correct",
+    "noQuiz": "No quiz questions this time",
+    "playAgain": "Play again",
+    "changePlayers": "Change players",
+    "legendSnakes": "Snakes on the board",
+    "legendLadders": "Ladders on the board",
+    "boardLabel": "Game board, squares 1 to 100. Snakes and ladders are listed below the board.",
+    "draft": "Sinhala and Tamil game text are draft translations awaiting native-speaker review.",
+    "homeTitle": "Learn while you play",
+    "homeText": "A snakes and ladders game for 1 to 4 players, where every snake is a real Sri Lankan species with a quiz question.",
+    "homeCta": "Play snakes & ladders"
   }
 }

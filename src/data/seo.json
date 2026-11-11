@@ -1,0 +1,65 @@
+{
+  "siteName": "Ceylon Serpents",
+  "siteUrl": "https://kpulathisi.github.io/Ceylon-Serpents",
+  "titleSuffix": " · Ceylon Serpents",
+  "defaultImage": "green-pit-viper",
+  "googleSiteVerification": "zjlh90Be1JlS4oahVchp2krpW6BsXi568sn6tUc6ioA",
+  "allowIndexing": true,
+  "pages": {
+    "home": {
+      "title": "Ceylon Serpents · Snakes of Sri Lanka field guide",
+      "description": "A trilingual field guide to Sri Lanka's snakes in English, Sinhala and Tamil: species profiles, habitats, myths, a learning game and snakebite first aid."
+    },
+    "library": {
+      "title": "Snake library: species of Sri Lanka",
+      "description": "Browse Sri Lankan snakes by English, Sinhala, Tamil or scientific name. Filter by habitat, endemic status, group and medical importance."
+    },
+    "identify": {
+      "title": "Identify a snake in Sri Lanka from a photo",
+      "description": "An experimental, non-diagnostic guide to compare a snake photo with Sri Lankan species. Learn the features, never a safe-or-dangerous verdict."
+    },
+    "habitats": {
+      "title": "Snake habitats of Sri Lanka: zones and species",
+      "description": "Explore Sri Lanka's wet, dry and intermediate zones and seven habitats, from Sinharaja rainforest to paddy fields, and the snakes found in each."
+    },
+    "knowledge": {
+      "title": "Knowledge corner: snake behaviour, myths and folklore",
+      "description": "How snakes move and behave, Sri Lankan snake folklore and stories, and myths checked against the evidence."
+    },
+    "play": {
+      "title": "Snakes and ladders: learn Sri Lanka's snakes",
+      "description": "A free snakes and ladders game for 1 to 4 players. Every snake is a real Sri Lankan species with a quiz, and every ladder is a snake-safety habit."
+    },
+    "safety": {
+      "title": "Snakebite first aid in Sri Lanka · Call 1990",
+      "description": "What to do and what not to do after a snakebite in Sri Lanka. Keep still, remove rings, call 1990 for a free ambulance or go straight to hospital."
+    },
+    "sources": {
+      "title": "About Ceylon Serpents: sources and credits",
+      "description": "How Ceylon Serpents was compiled: references, image credits, content review process and known limitations."
+    },
+    "compare": {
+      "title": "Compare snake species",
+      "description": "Compare up to three Sri Lankan snake species side by side, with the reasons appearance can mislead."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "This page doesn't exist. Browse the snake library or read snakebite first aid."
+    }
+  },
+  "templates": {
+    "species": {
+      "title": "{name} ({scientific}) in Sri Lanka",
+      "description": "{localNames} {summary}"
+    },
+    "article": {
+      "title": "{title}",
+      "description": "{lede}"
+    },
+    "habitat": {
+      "title": "{name}: snakes and habitat in Sri Lanka",
+      "description": "{description}"
+    }
+  },
+  "species": {}
+}

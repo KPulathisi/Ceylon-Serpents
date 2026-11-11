@@ -2,7 +2,9 @@
 /* Deliberately image-free and light so it loads fast on a poor connection. */
 import { Phone, Check, X, ExternalLink } from 'lucide-vue-next'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo } from '../composables/useSeo.js'
 const { t, lang } = useLanguage()
+useSeo('safety')
 </script>
 
 <template>

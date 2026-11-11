@@ -5,8 +5,10 @@ import FolkloreStory from '../components/FolkloreStory.vue'
 import MythFactCard from '../components/MythFactCard.vue'
 import { useData, imageSet } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo } from '../composables/useSeo.js'
 
 const { t, l, lang } = useLanguage()
+useSeo('knowledge')
 const { behavior, myths, articles, folklore } = useData()
 const kinds = ['all', 'folklore', 'cultural', 'unsupported']
 const kind = ref('all')
@@ -24,6 +26,7 @@ const img = (f) => imageSet(f)
         <RouterLink :to="{ hash: '#folklore' }">{{ t('knowledge.folklore') }}</RouterLink>
         <RouterLink :to="{ hash: '#myths' }">{{ t('knowledge.myths') }}</RouterLink>
         <RouterLink :to="{ hash: '#articles' }">{{ t('knowledge.articles') }}</RouterLink>
+        <RouterLink to="/play">{{ t('game.homeCta') }}</RouterLink>
       </nav>
     </header>
 

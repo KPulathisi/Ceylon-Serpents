@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { ArrowLeft } from 'lucide-vue-next'
 import { useData, imageSet } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo, breadcrumbs } from '../composables/useSeo.js'
 
 const props = defineProps({ id: { type: String, required: true } })
 const { t, l, lang } = useLanguage()
@@ -10,6 +11,16 @@ const { getArticle, getSource } = useData()
 const a = computed(() => getArticle(props.id))
 const img = computed(() => (a.value ? imageSet(a.value.image) : null))
 const refs = computed(() => a.value?.refs.map(getSource).filter(Boolean) ?? [])
+
+useSeo(() => a.value
+  ? {
+      kind: 'article', item: a.value, type: 'article',
+      jsonLd: ({ meta, image, url }) => [
+        { '@context': 'https://schema.org', '@type': 'Article', headline: a.value.title.en, description: meta.description, image, url, inLanguage: 'en', publisher: { '@type': 'Organization', name: 'Ceylon Serpents' } },
+        breadcrumbs([['Home', '/'], ['Knowledge corner', '/knowledge'], [a.value.title.en, `/knowledge/${a.value.id}`]])
+      ]
+    }
+  : { kind: 'page', item: 'notFound', noindex: true })
 </script>
 
 <template>

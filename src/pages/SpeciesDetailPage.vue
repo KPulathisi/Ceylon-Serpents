@@ -9,6 +9,7 @@ import SafetyNotice from '../components/SafetyNotice.vue'
 import PhotoCredit from '../components/PhotoCredit.vue'
 import { useData, orderedImages } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo, breadcrumbs } from '../composables/useSeo.js'
 import { useLocalCollection } from '../composables/useLocalCollection.js'
 
 const props = defineProps({ id: { type: String, required: true } })
@@ -35,6 +36,10 @@ const moveName = (id) => {
 const thumb = (f) => `${import.meta.env.BASE_URL}images/${f}-sm.webp`
 const imgs = computed(() => (s.value ? orderedImages(s.value) : []))
 const credit = computed(() => imgs.value[active.value] || null)
+
+useSeo(() => s.value
+  ? { kind: 'species', item: s.value, jsonLd: () => breadcrumbs([['Home', '/'], ['Snake library', '/library'], [s.value.names.en, `/species/${s.value.id}`]]) }
+  : { kind: 'page', item: 'notFound', noindex: true })
 </script>
 
 <template>

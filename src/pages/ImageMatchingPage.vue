@@ -6,9 +6,11 @@ import SpeciesMedia from '../components/SpeciesMedia.vue'
 import MedicalBadge from '../components/MedicalBadge.vue'
 import { useData } from '../composables/useData.js'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSeo } from '../composables/useSeo.js'
 import { useClassifier, suggestColour } from '../composables/useClassifier.js'
 
 const { t, lang } = useLanguage()
+useSeo('identify')
 const { species, getSpecies } = useData()
 const classifier = useClassifier()
 
